@@ -12,9 +12,12 @@
             --bg: #0f0f12;
             --card: #18181c;
             --primary: #e50914;
-            /* aggressive accent color */
             --text: #f1f1f1;
             --text-muted: #999;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -23,90 +26,91 @@
             color: var(--text);
             margin: 0;
             padding: 0;
+            -webkit-text-size-adjust: 100%;
         }
 
+        /* ===== HEADER ===== */
         header {
             background: var(--card);
-            padding: 1rem 2rem;
+            padding: 0.75rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #333;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: var(--primary);
             text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        /* ===== LAYOUT (Desktop: 3 columns, Mobile: 1 column) ===== */
         .layout-wrapper {
             display: grid;
             grid-template-columns: 160px 1fr 160px;
-            gap: 1.5rem;
+            gap: 1rem;
             max-width: 1600px;
             margin: 0 auto;
-            padding: 1.5rem 1rem;
+            padding: 1rem;
         }
 
         .sidebar-ad {
             width: 160px;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
             position: sticky;
-            top: 20px;
+            top: 70px;
+            align-self: start;
         }
 
         .side-banner {
             width: 160px;
             height: 600px;
-            background: #222;
-            border: 1px dashed #444;
-            color: #666;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        @media (max-width: 1024px) {
-            .layout-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar-ad {
-                display: none;
-            }
+            background: #1a1a1f;
+            overflow: hidden;
         }
 
         .container {
             width: 100%;
+            min-width: 0;
         }
 
-        /* Categories */
+        /* ===== CATEGORIES ===== */
         .categories {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
             overflow-x: auto;
-            padding-bottom: 0.5rem;
+            padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none;
         }
 
         .cat-btn {
             background: #2a2a30;
             border: none;
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.45rem 0.9rem;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.85rem;
             white-space: nowrap;
             transition: 0.2s;
+            flex-shrink: 0;
+            touch-action: manipulation;
         }
 
         .cat-btn:hover,
@@ -114,11 +118,11 @@
             background: var(--primary);
         }
 
-        /* Video Grid */
+        /* ===== VIDEO GRID ===== */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
         }
 
         .video-card {
@@ -128,17 +132,21 @@
             cursor: pointer;
             transition: transform 0.2s;
             position: relative;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .video-card:hover {
             transform: scale(1.02);
         }
 
+        .video-card:active {
+            transform: scale(0.98);
+        }
+
         .thumbnail-wrap {
             position: relative;
             width: 100%;
             padding-top: 56.25%;
-            /* 16:9 Aspect Ratio */
         }
 
         .thumbnail {
@@ -152,49 +160,60 @@
 
         .duration {
             position: absolute;
-            bottom: 8px;
-            right: 8px;
-            background: rgba(0, 0, 0, 0.8);
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0, 0, 0, 0.85);
             color: white;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 0.7rem;
             font-weight: bold;
         }
 
         .video-info {
-            padding: 1rem;
+            padding: 0.6rem 0.75rem 0.75rem;
         }
 
         .video-title {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin: 0 0 0.5rem;
+            margin: 0 0 0.3rem;
             line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .video-meta {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
         }
 
-        /* Fake Ad Banner */
+        /* ===== AD BANNERS ===== */
         .ad-banner {
             width: 100%;
-            height: 90px;
-            background: #222;
-            border: 1px dashed #444;
-            color: #666;
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 1.5rem 0;
-            font-weight: bold;
+            margin: 0.75rem 0;
+            overflow: hidden;
         }
 
+        /* ===== MOBILE AD SLOT (shows between videos on mobile) ===== */
+        .mobile-ad-slot {
+            display: none;
+            width: 100%;
+            text-align: center;
+            margin: 0.5rem 0;
+            grid-column: 1 / -1;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
-            margin-top: 3rem;
-            padding: 2rem;
+            margin-top: 2rem;
+            padding: 1.5rem 1rem;
             background: #111;
             border-top: 1px solid #333;
             text-align: center;
@@ -204,14 +223,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 0.5rem 1rem;
+            margin-bottom: 1rem;
         }
 
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             transition: color 0.2s;
         }
 
@@ -221,51 +240,53 @@
 
         .rta-notice {
             color: #888;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.5;
         }
 
-        /* Age Gate */
+        /* ===== AGE GATE ===== */
         .age-gate-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 9999;
             display: none;
-            /* Controlled by JS */
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             padding: 1rem;
+            overflow-y: auto;
         }
 
         .age-gate-modal {
             background: #111;
             border: 1px solid #333;
-            max-width: 550px;
-            padding: 2rem;
-            border-radius: 8px;
+            width: 100%;
+            max-width: 520px;
+            padding: 1.5rem;
+            border-radius: 10px;
             text-align: left;
+            margin: auto;
         }
 
         .age-gate-header {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .age-badge {
             background: #d32f2f;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 900;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -274,7 +295,7 @@
         }
 
         .age-gate-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
             line-height: 1.2;
             margin: 0;
@@ -283,14 +304,13 @@
 
         .age-gate-text {
             color: #ccc;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
         }
 
         .age-gate-text p {
-            margin-top: 0;
-            margin-bottom: 1rem;
+            margin: 0 0 0.75rem;
         }
 
         .age-gate-btn {
@@ -299,12 +319,14 @@
             border: none;
             width: 100%;
             padding: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: background 0.2s;
             text-transform: uppercase;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .age-gate-btn:hover {
@@ -312,9 +334,9 @@
         }
 
         .age-gate-footer {
-            margin-top: 1rem;
+            margin-top: 0.75rem;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #888;
         }
 
@@ -323,7 +345,6 @@
             text-decoration: none;
         }
 
-        /* Blur class applied to body wrapper */
         body.content-blurred .main-wrapper {
             filter: blur(12px);
             pointer-events: none;
@@ -332,6 +353,88 @@
 
         body.content-blurred {
             overflow: hidden;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+
+        /* Tablet: hide sidebars, 3-column grid */
+        @media (max-width: 1100px) {
+            .layout-wrapper {
+                grid-template-columns: 1fr;
+                padding: 0.75rem;
+            }
+
+            .sidebar-ad {
+                display: none;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Mobile: 2 columns, smaller grid, show mobile ad slots */
+        @media (max-width: 640px) {
+            header {
+                padding: 0.6rem 0.75rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .layout-wrapper {
+                padding: 0.5rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .mobile-ad-slot {
+                display: block;
+            }
+
+            .video-title {
+                font-size: 0.78rem;
+            }
+
+            .video-meta {
+                font-size: 0.7rem;
+            }
+
+            .video-info {
+                padding: 0.4rem 0.5rem 0.5rem;
+            }
+
+            .categories {
+                gap: 0.4rem;
+            }
+
+            .cat-btn {
+                font-size: 0.78rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            footer {
+                padding: 1rem 0.75rem;
+            }
+
+            .age-gate-modal {
+                padding: 1rem;
+            }
+
+            .age-gate-title {
+                font-size: 1rem;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 360px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
