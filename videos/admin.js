@@ -80,9 +80,12 @@ app.post('/api/add-video', async (req, res) => {
 
         fs.writeFileSync(dataPath, dataContent);
 
-        // Append the video
-        const appendString = `\n// Auto-added via Admin\nvideoDatabase.unshift(${JSON.stringify(videoData, null, 2)});\n`;
-        fs.appendFileSync(dataPath, appendString);
+        // Append the video DIRECTLY into the array
+        dataContent = dataContent.replace(
+            /const videoDatabase = \[\s*/i,
+            `const videoDatabase = [\n    ${JSON.stringify(videoData, null, 2)},\n`
+        );
+        fs.writeFileSync(dataPath, dataContent);
 
         console.log("Successfully added:", videoData.title);
         res.json({ success: true, video: videoData, categoryCreated: categoryName });
