@@ -149,6 +149,41 @@
             margin: 1.5rem 0;
             font-weight: bold;
         }
+
+        footer {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #111;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .rta-notice {
+            color: #888;
+            font-size: 0.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
@@ -168,10 +203,6 @@
             [ 728x90 Leaderboard Ad Placement Here ]
         </div>
 
-        <div class="categories" id="category-container">
-            <!-- Rendered by JS -->
-        </div>
-
         <div class="video-grid" id="video-grid">
             <!-- Rendered by JS -->
         </div>
@@ -182,16 +213,6 @@
     <script src="/videos/data.js?v=3"></script>
 
     <script>
-        // 1. Render Categories
-        const catContainer = document.getElementById('category-container');
-        categories.forEach(cat => {
-            const btn = document.createElement('button');
-            btn.className = `cat-btn ${cat.id === 'all' ? 'active' : ''}`;
-            btn.textContent = cat.name;
-            btn.onclick = () => filterVideos(cat.id, btn);
-            catContainer.appendChild(btn);
-        });
-
         // 2. Render Videos
         const gridContainer = document.getElementById('video-grid');
 
@@ -221,37 +242,41 @@
         // Initial render
         renderVideos(videoDatabase);
 
-        // 3. Filter Logic
-        function filterVideos(categoryId, btnElement) {
-            // Update active button state
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-            btnElement.classList.add('active');
-
-            if (categoryId === 'all') {
-                renderVideos(videoDatabase);
-            } else {
-                const filtered = videoDatabase.filter(v => v.category === categoryId);
-                renderVideos(filtered);
-            }
-        }
-
-        // 4. THE MONEY MAKER: Click Logic & Ad Scripts
+        // 4. THE MONEY MAKER: Click Logic & Popunder Ad Scripts
         function handleVideoClick(destinationUrl) {
             // Here is where the aggregator magic happens. 
             // Usually, you trigger a popunder ad script right here before redirecting.
 
-            // Example logic:
-            // 1. Trigger Ad Network Event (e.g., Popunder or interstitial)
-            console.log("Ad Network Triggered!");
+            // Simulated Popunder Ad Logic
+            console.log("Popunder Ad Triggered!");
 
-            // 2. Redirect the user to the affiliate link or original video
-            // In a real scenario, this is where they leave your site, but you earn the CPM/CPA.
-            window.open(destinationUrl, '_blank'); // Opens in new tab
+            // 1. Open the requested video in a NEW background tab for the user
+            window.open(destinationUrl, '_blank');
 
-            // Sometimes aggregators keep the current window on the site to get more pageviews
-            // window.location.href = destinationUrl; 
+            // 2. Redirect the CURRENT window (which the user left behind) to the Ad Network link.
+            // When they close their specific video, they return to find a giant juicy ad!
+            // Usually this maps to a JuicyAds or TrafficJunky smartlink URL
+            window.location.href = "https://example.com/simulated-juicy-ad";
         }
     </script>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.qorno.com/terms-of-service/" target="_blank">Terms of Service</a>
+            <a href="https://www.qorno.com/privacy-statement/" target="_blank">Privacy Statement</a>
+            <a href="https://www.qorno.com/statement-of-responsibility/" target="_blank">Statement of Responsibility</a>
+            <a href="https://www.qorno.com/notice-and-action-policy/" target="_blank">Notice and Action Policy</a>
+            <a href="https://www.qorno.com/notice-and-action-policy/#DMCA" target="_blank">DMCA</a>
+            <a href="https://www.qorno.com/acceptable-content-policy/" target="_blank">Acceptable Content Policy</a>
+            <a href="https://www.qorno.com/dsa-notice/" target="_blank">DSA Notice</a>
+            <a href="https://www.qorno.com/2257/" target="_blank">2257</a>
+        </div>
+        <div class="rta-notice">
+            <strong>Parents:</strong> ViralTube uses the "Restricted To Adults" (RTA) website label to better enable
+            parental filtering. Protect your children from adult content and block access to this site by using parental
+            controls.
+        </div>
+    </footer>
 
 </body>
 
