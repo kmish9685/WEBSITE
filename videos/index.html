@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Aggregator | Viral Content</title>
+    <style>
+        :root {
+            --bg: #0f0f12;
+            --card: #18181c;
+            --primary: #e50914;
+            /* aggressive accent color */
+            --text: #f1f1f1;
+            --text-muted: #999;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--card);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .cat-btn {
+            background: #2a2a30;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: 0.2s;
+        }
+
+        .cat-btn:hover,
+        .cat-btn.active {
+            background: var(--primary);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-card {
+            background: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: scale(1.02);
+        }
+
+        .thumbnail-wrap {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+        }
+
+        .thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .video-info {
+            padding: 1rem;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+            line-height: 1.3;
+        }
+
+        .video-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Fake Ad Banner */
+        .ad-banner {
+            width: 100%;
+            height: 90px;
+            background: #222;
+            border: 1px dashed #444;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">ViralTube</a>
+        <div>
+            <!-- Placeholder for ad network script / header ad -->
+            <span style="color:#666; font-size:0.8rem;">[Header Ad Slot]</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="ad-banner" id="top-ad">
+            [ 728x90 Leaderboard Ad Placement Here ]
+        </div>
+
+        <div class="categories" id="category-container">
+            <!-- Rendered by JS -->
+        </div>
+
+        <div class="video-grid" id="video-grid">
+            <!-- Rendered by JS -->
+        </div>
+
+    </div>
+
+    <!-- Load Database -->
+    <script src="data.js"></script>
+
+    <script>
+        // 1. Render Categories
+        const catContainer = document.getElementById('category-container');
+        categories.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = `cat-btn ${cat.id === 'all' ? 'active' : ''}`;
+            btn.textContent = cat.name;
+            btn.onclick = () => filterVideos(cat.id, btn);
+            catContainer.appendChild(btn);
+        });
+
+        // 2. Render Videos
+        const gridContainer = document.getElementById('video-grid');
+
+        function renderVideos(videosToRender) {
+            gridContainer.innerHTML = '';
+            videosToRender.forEach(vid => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+
+                // THE REDIRECT LOGIC
+                card.onclick = () => handleVideoClick(vid.url);
+
+                card.innerHTML = `
+        <div class="thumbnail-wrap">
+          <img src="${vid.thumbnail}" class="thumbnail" loading="lazy" alt="${vid.title}">
+          <span class="duration">${vid.duration}</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">${vid.title}</h3>
+          <div class="video-meta">${vid.views} views • Category: ${vid.category}</div>
+        </div>
+      `;
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // Initial render
+        renderVideos(videoDatabase);
+
+        // 3. Filter Logic
+        function filterVideos(categoryId, btnElement) {
+            // Update active button state
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            if (categoryId === 'all') {
+                renderVideos(videoDatabase);
+            } else {
+                const filtered = videoDatabase.filter(v => v.category === categoryId);
+                renderVideos(filtered);
+            }
+        }
+
+        // 4. THE MONEY MAKER: Click Logic & Ad Scripts
+        function handleVideoClick(destinationUrl) {
+            // Here is where the aggregator magic happens. 
+            // Usually, you trigger a popunder ad script right here before redirecting.
+
+            // Example logic:
+            // 1. Trigger Ad Network Event (e.g., Popunder or interstitial)
+            console.log("Ad Network Triggered!");
+
+            // 2. Redirect the user to the affiliate link or original video
+            // In a real scenario, this is where they leave your site, but you earn the CPM/CPA.
+            window.open(destinationUrl, '_blank'); // Opens in new tab
+
+            // Sometimes aggregators keep the current window on the site to get more pageviews
+            // window.location.href = destinationUrl; 
+        }
+    </script>
+
+</body>
+
+</html>
