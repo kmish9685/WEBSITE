@@ -186,6 +186,102 @@
             line-height: 1.5;
         }
 
+        /* Age Gate */
+        .age-gate-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: none;
+            /* Controlled by JS */
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .age-gate-modal {
+            background: #111;
+            border: 1px solid #333;
+            max-width: 550px;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .age-gate-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .age-badge {
+            background: #d32f2f;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 900;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .age-gate-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin: 0;
+            color: #fff;
+        }
+
+        .age-gate-text {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .age-gate-text p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .age-gate-btn {
+            background: #008c44;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-transform: uppercase;
+        }
+
+        .age-gate-btn:hover {
+            background: #007036;
+        }
+
+        .age-gate-footer {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .age-gate-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
         /* Blur class applied to body wrapper */
         body.content-blurred .main-wrapper {
             filter: blur(12px);
@@ -208,235 +304,120 @@
 
     <!-- Age Gate Overlay -->
     <div class="age-gate-overlay" id="age-gate">
-        justify-content: center;
-        padding: 1rem;
-        }
+        <div class="age-gate-modal">
+            <div class="age-gate-header">
+                <div class="age-badge">18+</div>
+                <h2 class="age-gate-title">ViralTube is an ADULTS ONLY website!</h2>
+            </div>
+            <div class="age-gate-text">
+                <p>You are about to enter a website that contains explicit material (pornography). This website should
+                    only be accessed if you are at least 18 years old or of legal age to view such material in your
+                    local jurisdiction, whichever is greater. Furthermore, you represent and warrant that you will not
+                    allow any minor access to this site or services.</p>
+                <p>PARENTS, PLEASE BE ADVISED: If you are a parent, it is your responsibility to keep any age-restricted
+                    content from being displayed to your children or wards. Protect your children from adult content and
+                    block access to this site by using parental controls.</p>
+            </div>
+            <button class="age-gate-btn" onclick="acceptAgeGate()">I am 18+<br>ENTER</button>
+            <div class="age-gate-footer">
+                When accessing this site you agree to <a href="policies.html#tos" target="_blank">our terms of use</a>.
+            </div>
+        </div>
+    </div>
 
-        .age-gate-modal {
-        background: #111;
-        border: 1px solid #333;
-        max-width: 550px;
-        padding: 2rem;
-        border-radius: 8px;
-        text-align: left;
-        }
+    <div class="main-wrapper">
 
-        .age-gate-header {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
-        }
+        <header>
+            <a href="#" class="logo">ViralTube</a>
+            <div>
+                <!-- Placeholder for ad network script / header ad -->
+                <span style="color:#666; font-size:0.8rem;">[Header Ad Slot]</span>
+            </div>
+        </header>
 
-        .age-badge {
-        background: #d32f2f;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: 900;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        }
+        <div class="container">
 
-        .age-gate-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.2;
-        margin: 0;
-        color: #fff;
-        }
-
-        .age-gate-text {
-        color: #ccc;
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        }
-
-        .age-gate-text p {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        }
-
-        .age-gate-btn {
-        background: #008c44;
-        color: white;
-        border: none;
-        width: 100%;
-        padding: 1rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.2s;
-        text-transform: uppercase;
-        }
-
-        .age-gate-btn:hover {
-        background: #007036;
-        }
-
-        .age-gate-footer {
-        margin-top: 1rem;
-        text-align: center;
-        font-size: 0.85rem;
-        color: #888;
-        }
-
-        .age-gate-footer a {
-        color: var(--primary);
-        text-decoration: none;
-        }
-
-        /* Blur class applied to body wrapper */
-        body.content-blurred .main-wrapper {
-        filter: blur(12px);
-        pointer-events: none;
-        user-select: none;
-        }
-
-        body.content-blurred {
-        overflow: hidden;
-        }
-        </style>
-        </head>
-
-        <body>
-
-            <!-- Age Gate Overlay -->
-            <div class="age-gate-overlay" id="age-gate">
-                <div class="age-gate-modal">
-                    <div class="age-gate-header">
-                        <div class="age-badge">18+</div>
-                        <h2 class="age-gate-title">ViralTube is an ADULTS ONLY website!</h2>
-                    </div>
-                    <div class="age-gate-text">
-                        <p>You are about to enter a website that contains explicit material (pornography). This website
-                            should
-                            only be accessed if you are at least 18 years old or of legal age to view such material in
-                            your
-                            local jurisdiction, whichever is greater. Furthermore, you represent and warrant that you
-                            will not
-                            allow any minor access to this site or services.</p>
-                        <p>PARENTS, PLEASE BE ADVISED: If you are a parent, it is your responsibility to keep any
-                            age-restricted
-                            content from being displayed to your children or wards. Protect your children from adult
-                            content and
-                            block access to this site by using parental controls.</p>
-                    </div>
-                    <button class="age-gate-btn" onclick="acceptAgeGate()">I am 18+<br>ENTER</button>
-                    <div class="age-gate-footer">
-                        When accessing this site you agree to <a href="https://www.qorno.com/terms-of-service/"
-                            target="_blank">our terms of use</a>.
-                    </div>
-                </div>
+            <div class="ad-banner" id="top-ad">
+                [ 728x90 Leaderboard Ad Placement Here ]
             </div>
 
-            <div class="main-wrapper">
+            <div class="video-grid" id="video-grid">
+                <!-- Rendered by JS -->
+            </div>
 
-
-                <header>
-                    <a href="#" class="logo">ViralTube</a>
-                    <div>
-                        <!-- Placeholder for ad network script / header ad -->
-                        <span style="color:#666; font-size:0.8rem;">[Header Ad Slot]</span>
-                    </div>
-                </header>
-
-                <div class="container">
-
-                    <div class="ad-banner" id="top-ad">
-                        [ 728x90 Leaderboard Ad Placement Here ]
-                    </div>
-
-                    <div class="video-grid" id="video-grid">
-                        <!-- Rendered by JS -->
-                    </div>
-
-                </div>
-
-                <!-- Load Database - Absolute Path for Vercel -->
-                <script src="/videos/data.js?v=4"></script>
-
-                <script>
-                    // Age Gate Initialization
-                    document.addEventListener('DOMContentLoaded', () => {
-                        if (!localStorage.getItem('ageVerified')) {
-                            document.body.classList.add('content-blurred');
-                            document.getElementById('age-gate').style.display = 'flex';
-                        }
-                    });
-
-                    function acceptAgeGate() {
-                        localStorage.setItem('ageVerified', 'true');
-                        document.body.classList.remove('content-blurred');
-                        document.getElementById('age-gate').style.display = 'none';
-                    }
-
-                    // 2. Render Videos
-                    const gridContainer = document.getElementById('video-grid');
-
-                    function renderVideos(videosToRender) {
-                        gridContainer.innerHTML = '';
-                        videosToRender.forEach(vid => {
-                            const card = document.createElement('div');
-                            card.className = 'video-card';
-
-                            // THE REDIRECT LOGIC
-                            card.onclick = () => handleVideoClick(vid.url);
-
-                            card.innerHTML = `
-        <div class="thumbnail-wrap">
-          <img src="${vid.thumbnail}" class="thumbnail" loading="lazy" alt="${vid.title}">
-          <span class="duration">${vid.duration}</span>
         </div>
-        <div class="video-info">
-          <h3 class="video-title">${vid.title}</h3>
-          <div class="video-meta">${vid.views} views • Category: ${vid.category}</div>
-        </div>
-      `;
-                            gridContainer.appendChild(card);
-                        });
-                    }
 
-                    // Initial render
-                    renderVideos(videoDatabase);
+        <footer>
+            <div class="footer-links">
+                <a href="policies.html#tos">Terms of Service</a>
+                <a href="policies.html#privacy">Privacy Statement</a>
+                <a href="policies.html#responsibility">Statement of Responsibility</a>
+                <a href="policies.html#notice-action">Notice and Action Policy</a>
+                <a href="policies.html#dmca">DMCA</a>
+                <a href="policies.html#acceptable-content">Acceptable Content Policy</a>
+                <a href="policies.html#dsa">DSA Notice</a>
+                <a href="policies.html#2257">2257</a>
+            </div>
+            <div class="rta-notice">
+                <strong>Parents:</strong> ViralTube uses the "Restricted To Adults" (RTA) website label to better enable
+                parental filtering. Protect your children from adult content and block access to this site by using
+                parental
+                controls.
+            </div>
+        </footer>
+    </div> <!-- End Main Wrapper -->
 
-                    // 4. THE MONEY MAKER: Click Logic & Popunder Ad Scripts
-                    function handleVideoClick(destinationUrl) {
-                        // Here is where the aggregator magic happens. 
-                        // The JuicyAds script near the top of the body tag detects ALL clicks automatically.
-                        // We simply redirect the user to the destination, and JuicyAds fires the Popunder ad in the background instantly.
+    <!-- Load Database - Absolute Path for Vercel -->
+    <script src="/videos/data.js?v=6"></script>
 
-                        window.location.href = destinationUrl;
-                    }
-                </script>
+    <script>
+        // Age Gate Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('ageVerified')) {
+                document.body.classList.add('content-blurred');
+                document.getElementById('age-gate').style.display = 'flex';
+            }
+        });
 
-                <footer>
-                    <div class="footer-links">
-                        <a href="policies.html#tos">Terms of Service</a>
-                        <a href="policies.html#privacy">Privacy Statement</a>
-                        <a href="policies.html#responsibility">Statement of Responsibility</a>
-                        <a href="policies.html#notice-action">Notice and Action Policy</a>
-                        <a href="policies.html#dmca">DMCA</a>
-                        <a href="policies.html#acceptable-content">Acceptable Content Policy</a>
-                        <a href="policies.html#dsa">DSA Notice</a>
-                        <a href="policies.html#2257">2257</a>
+        function acceptAgeGate() {
+            localStorage.setItem('ageVerified', 'true');
+            document.body.classList.remove('content-blurred');
+            document.getElementById('age-gate').style.display = 'none';
+        }
+
+        // 2. Render Videos
+        const gridContainer = document.getElementById('video-grid');
+
+        function renderVideos(videosToRender) {
+            gridContainer.innerHTML = '';
+            videosToRender.forEach(vid => {
+                const aLink = document.createElement('a');
+                aLink.href = vid.url;
+                aLink.target = '_blank';
+                aLink.style.textDecoration = 'none';
+                aLink.style.color = 'inherit';
+
+                const card = document.createElement('div');
+                card.className = 'video-card';
+
+                card.innerHTML = `
+                    <div class="thumbnail-wrap">
+                    <img src="${vid.thumbnail}" class="thumbnail" loading="lazy" alt="${vid.title}">
+                    <span class="duration">${vid.duration}</span>
                     </div>
-                    <div class="rta-notice">
-                        <strong>Parents:</strong> ViralTube uses the "Restricted To Adults" (RTA) website label to
-                        better enable
-                        parental filtering. Protect your children from adult content and block access to this site by
-                        using
-                        parental
-                        controls.
+                    <div class="video-info">
+                    <h3 class="video-title">${vid.title}</h3>
+                    <div class="video-meta">${vid.views} views • Category: ${vid.category}</div>
                     </div>
-                </footer>
-            </div> <!-- End Main Wrapper -->
-        </body>
+                `;
+                aLink.appendChild(card);
+                gridContainer.appendChild(aLink);
+            });
+        }
+
+        // Initial render
+        renderVideos(videoDatabase);
+    </script>
+</body>
 
 </html>
