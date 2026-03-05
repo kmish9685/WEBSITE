@@ -337,11 +337,6 @@
 
 <body>
 
-    <!-- JuicyAds PopUnders v3 Start -->
-    <script type="text/javascript"
-        src="https://js.juicyads.com/jp.php?c=446423w2t234u4r2p294z28494&u=https%3A%2F%2Fwww.juicyads.rocks"></script>
-    <!-- JuicyAds PopUnders v3 End -->
-
     <!-- Age Gate Overlay -->
     <div class="age-gate-overlay" id="age-gate">
         <div class="age-gate-modal">
@@ -451,6 +446,16 @@
             localStorage.setItem('ageVerified', 'true');
             document.body.classList.remove('content-blurred');
             document.getElementById('age-gate').style.display = 'none';
+
+            // Load JuicyAds Popunder ONLY after user has accepted age gate
+            // This prevents the popunder from firing on the age gate click itself
+            if (!document.getElementById('ja-popunder-script')) {
+                var s = document.createElement('script');
+                s.id = 'ja-popunder-script';
+                s.type = 'text/javascript';
+                s.src = 'https://js.juicyads.com/jp.php?c=446423w2t234u4r2p294z28494&u=https%3A%2F%2Fwww.juicyads.rocks';
+                document.body.appendChild(s);
+            }
         }
 
         // 2. Render Videos
