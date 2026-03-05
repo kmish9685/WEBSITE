@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — ToolsIndia</title>
+    <meta name="description"
+        content="Contact ToolsIndia for feedback, bug reports, sponsorship or partnership enquiries." />
+    <link rel="canonical" href="https://toolsindia.in/contact.html" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo">Tools<span>India</span></a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <nav id="main-nav">
+                <a href="/">Home</a><a href="tools/">Tools</a><a href="blog/">Blog</a>
+                <a href="hi/">हिन्दी</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div style="max-width:800px; margin:2rem auto; padding:0 1rem;">
+        <nav class="breadcrumb" style="padding:0; margin-bottom:1rem;"><a href="/">Home</a><span
+                class="sep">›</span><span class="cur">Contact</span></nav>
+        <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">Contact Us</h1>
+        <p style="color:var(--text-muted); margin-bottom:2rem;">Have a question, found a bug, or interested in
+            sponsorship? We'd love to hear from you.</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem;">
+            <div class="tool-box">
+                <form id="contact-form" onsubmit="handleContact(event)">
+                    <div class="form-group">
+                        <label for="cf-name">Full Name *</label>
+                        <input type="text" id="cf-name" placeholder="Your Name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-email">Email Address *</label>
+                        <input type="email" id="cf-email" placeholder="your@email.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-subject">Subject *</label>
+                        <select id="cf-subject">
+                            <option value="general">General Enquiry</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="sponsor">Sponsorship / Advertising</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="content">Content / Partnership</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-msg">Message *</label>
+                        <textarea id="cf-msg" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-action" style="width:100%;">📨 Send Message</button>
+                </form>
+                <div id="cf-success" class="alert alert-success hidden" style="margin-top:1rem;">✓ Message sent! We'll
+                    reply within 24-48 hours.</div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+                <div class="tool-box">
+                    <h3 style="font-size:1rem; font-weight:700; margin-bottom:1rem;">📬 Contact Info</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.75rem;">📧
+                        contact@toolsindia.in</p>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.75rem;">⏱ Response: 24–48 hours
+                    </p>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">📍 India</p>
+                </div>
+                <div class="tool-box">
+                    <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.75rem;">💼 Sponsorship</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Reach thousands of daily Indian users. We
+                        offer sponsored content, banner ads, and tool integrations. Email us with "Sponsorship" in the
+                        subject.</p>
+                </div>
+                <div class="tool-box">
+                    <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.75rem;">🐛 Bug Reports</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Found a bug in a tool? Please describe the
+                        issue, which tool, and your browser. We fix critical bugs within 48 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia. All rights reserved.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="about.html">About</a><a
+                        href="privacy-policy.html">Privacy</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function handleContact(e) {
+            e.preventDefault();
+            document.getElementById('cf-success').classList.remove('hidden');
+            e.target.reset();
+        }
+    </script>
+</body>
+
+</html>

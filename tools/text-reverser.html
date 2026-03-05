@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Reverser — Reverse Text, Words & Lines Online | ToolsIndia</title>
+    <meta name="description"
+        content="Free online text reverser. Reverse characters, words, or lines in any text instantly. Copy result with one click." />
+    <link rel="canonical" href="https://toolsindia.in/tools/text-reverser.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Reverser","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"url":"https://toolsindia.in/tools/text-reverser.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Text Reverser</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-text">📝 Text Tool</span>
+                <h1>Text Reverser</h1>
+                <p>Reverse characters, words, or lines of any text. Useful for puzzles, encoding, and fun text effects.
+                </p>
+            </div>
+            <div class="tool-box">
+                <div class="form-group"><label for="rev-input">Enter Text to Reverse</label><textarea id="rev-input"
+                        rows="6" placeholder="Type or paste text here..."></textarea></div>
+                <div class="btn-group" style="margin-bottom:1rem;">
+                    <button class="btn-sm" onclick="reverseText('chars')">Reverse Characters</button>
+                    <button class="btn-sm" onclick="reverseText('words')">Reverse Words</button>
+                    <button class="btn-sm" onclick="reverseText('lines')">Reverse Lines</button>
+                    <button class="btn-sm" onclick="reverseText('each-word')">Reverse Each Word</button>
+                </div>
+                <div class="form-group"><label for="rev-output">Result</label><textarea id="rev-output" rows="6"
+                        readonly placeholder="Result appears here..."></textarea></div>
+                <div class="btn-group"><button class="btn-copy"
+                        onclick="copyText(document.getElementById('rev-output').value)">📋 Copy Result</button><button
+                        class="btn-clear"
+                        onclick="document.getElementById('rev-input').value='';document.getElementById('rev-output').value='';">🗑
+                        Clear</button></div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>Reverse Text Modes Explained</h2>
+                <ul>
+                    <li><strong>Reverse Characters:</strong> "Hello" → "olleH"</li>
+                    <li><strong>Reverse Words:</strong> "Hello World" → "World Hello"</li>
+                    <li><strong>Reverse Lines:</strong> Reverses the order of lines in a multi-line text</li>
+                    <li><strong>Reverse Each Word:</strong> "Hello World" → "olleH dlroW"</li>
+                </ul>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="word-counter.html"><span>📊</span> Word Counter</a><a
+                        href="case-converter.html"><span>🔤</span> Case Converter</a><a
+                        href="remove-duplicate-lines.html"><span>🗑️</span> Remove Duplicates</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function reverseText(mode) { const inp = document.getElementById('rev-input').value; if (!inp.trim()) { showToast('Please enter some text', 'error'); return; } let out; switch (mode) { case 'chars': out = [...inp].reverse().join(''); break; case 'words': out = inp.split(/\s+/).reverse().join(' '); break; case 'lines': out = inp.split('\n').reverse().join('\n'); break; case 'each-word': out = inp.split(/\s+/).map(w => [...w].reverse().join('')).join(' '); break; }document.getElementById('rev-output').value = out; }
+    </script>
+</body>
+
+</html>

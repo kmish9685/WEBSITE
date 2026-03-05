@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Converter — Convert PNG to JPG, WebP Online Free | ToolsIndia</title>
+    <meta name="description"
+        content="Free image converter online. Convert PNG to JPG, JPG to WebP, PNG to WebP and more. Works in browser, no signup." />
+    <link rel="canonical" href="https://toolsindia.in/tools/image-converter.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Converter","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"url":"https://toolsindia.in/tools/image-converter.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Image Converter</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-image">🔁 Image Tool</span>
+                <h1>Image Converter — PNG, JPG, WebP Converter</h1>
+                <p>Convert images between PNG, JPEG, and WebP formats. Free, instant, and private — no file uploads.</p>
+            </div>
+            <div class="tool-box">
+                <div class="upload-zone" onclick="document.getElementById('conv-file').click()" ondrop="convDrop(event)"
+                    ondragover="event.preventDefault()">
+                    <div class="icon">🔁</div>
+                    <p>Click or drag an image here</p><small>JPG, PNG, WebP — Max 20MB</small>
+                    <input type="file" id="conv-file" accept="image/*" style="display:none;"
+                        onchange="convLoad(event)" />
+                </div>
+                <div id="conv-options" class="hidden" style="margin-top:1.5rem;">
+                    <img id="conv-preview" class="img-preview" style="display:block; margin-bottom:1rem;"
+                        alt="Preview" />
+                    <div id="conv-info" class="img-info"></div>
+                    <div class="form-row" style="margin-top:1rem;">
+                        <div class="form-group">
+                            <label for="conv-to">Convert To</label>
+                            <select id="conv-to">
+                                <option value="image/jpeg">JPEG (.jpg)</option>
+                                <option value="image/png">PNG (.png)</option>
+                                <option value="image/webp">WebP (.webp)</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label for="conv-qual">Quality (for JPEG/WebP)</label><input
+                                type="number" id="conv-qual" value="92" min="1" max="100" /></div>
+                    </div>
+                    <button class="btn-action" onclick="doConvert()" style="width:100%;">🔁 Convert Image</button>
+                    <div id="conv-result" class="hidden" style="margin-top:1.5rem;">
+                        <div id="conv-comparison" class="stat-grid"></div>
+                        <img id="conv-output" class="img-preview" style="display:block; margin-top:1rem;"
+                            alt="Converted" />
+                        <button class="btn-action" style="width:100%; margin-top:1rem;" onclick="convDownload()">⬇️
+                            Download Converted Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>When to Use Each Format</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Format</th>
+                            <th>Best For</th>
+                            <th>Pros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>JPEG</td>
+                            <td>Photos, backgrounds</td>
+                            <td>Smallest file size, wide support</td>
+                        </tr>
+                        <tr>
+                            <td>PNG</td>
+                            <td>Logos, screenshots, transparency needed</td>
+                            <td>Lossless, supports transparency</td>
+                        </tr>
+                        <tr>
+                            <td>WebP</td>
+                            <td>Web images (modern browsers)</td>
+                            <td>30% smaller than JPEG, supports transparency</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="image-compressor.html"><span>📦</span> Image Compressor</a><a
+                        href="image-resizer.html"><span>↔️</span> Image Resizer</a><a
+                        href="image-crop.html"><span>✂️</span> Image Cropper</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        let convImg = null, convFile = null, convResult = null;
+        function convDrop(e) { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f && f.type.startsWith('image/')) convProcess(f); }
+        function convLoad(e) { const f = e.target.files[0]; if (f) convProcess(f); }
+        async function convProcess(file) { convFile = file; const url = await readFileAsDataURL(file); convImg = await loadImage(url); document.getElementById('conv-preview').src = url; document.getElementById('conv-info').innerHTML = `<span>Name: <strong>${file.name}</strong></span><span>Size: <strong>${formatBytes(file.size)}</strong></span><span>Dims: <strong>${convImg.naturalWidth}×${convImg.naturalHeight}</strong></span>`; document.getElementById('conv-options').classList.remove('hidden'); }
+        function doConvert() { if (!convImg) { showToast('Please upload an image first', 'error'); return; } const fmt = document.getElementById('conv-to').value; const qual = parseInt(document.getElementById('conv-qual').value) / 100; const canvas = document.createElement('canvas'); canvas.width = convImg.naturalWidth; canvas.height = convImg.naturalHeight; canvas.getContext('2d').drawImage(convImg, 0, 0); convResult = canvas.toDataURL(fmt, qual); document.getElementById('conv-output').src = convResult; const bytes = Math.round(convResult.split(',')[1].length * 3 / 4); const grid = document.getElementById('conv-comparison'); grid.innerHTML = `<div class="stat-item"><div class="val">${formatBytes(convFile.size)}</div><div class="key">Original Size</div></div><div class="stat-item"><div class="val">${formatBytes(bytes)}</div><div class="key">Converted Size</div></div>`; document.getElementById('conv-result').classList.remove('hidden'); }
+        function convDownload() { if (!convResult) return; const fmt = document.getElementById('conv-to').value; const ext = fmt.split('/')[1]; const a = document.createElement('a'); a.href = convResult; a.download = 'converted.' + ext; a.click(); }
+    </script>
+</body>
+
+</html>

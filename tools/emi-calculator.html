@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMI Calculator India — Loan EMI Calculator Free 2025 | ToolsIndia</title>
+    <meta name="description"
+        content="Free EMI calculator for home loan, car loan, personal loan in India. Calculate monthly EMI instantly with amortization schedule." />
+    <meta name="keywords"
+        content="emi calculator, home loan emi calculator, car loan emi, personal loan emi calculator india, emi calculation formula" />
+    <link rel="canonical" href="https://toolsindia.in/tools/emi-calculator.html" />
+    <link rel="alternate" hreflang="hi" href="https://toolsindia.in/hi/tools/emi-calculator.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"EMI Calculator India","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free EMI calculator for home loan, car loan and personal loans in India.","url":"https://toolsindia.in/tools/emi-calculator.html"}
+  </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo">Tools<span>India</span></a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <nav id="main-nav">
+                <a href="/">Home</a><a href="../tools/" class="active">Tools</a><a href="../blog/">Blog</a>
+                <a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">EMI Calculator</span></div>
+
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header">
+                <span class="cat-badge cat-finance">💰 Finance Calculator</span>
+                <h1>EMI Calculator — Home, Car & Personal Loan</h1>
+                <p>Calculate your monthly EMI (Equated Monthly Instalment) for any loan. Works for home loan, car loan,
+                    personal loan, and education loan.</p>
+            </div>
+
+            <div class="tool-box">
+                <div class="form-group">
+                    <label for="loan-amount">Loan Amount (₹)</label>
+                    <input type="number" id="loan-amount" value="1000000" min="1000" max="100000000"
+                        placeholder="e.g. 1000000" oninput="calcEMI()" />
+                    <input type="range" id="loan-slider" min="50000" max="10000000" step="50000" value="1000000"
+                        oninput="syncSlider('loan-amount','loan-slider'); calcEMI()" style="margin-top:0.5rem;" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="interest-rate">Annual Interest Rate (%)</label>
+                        <input type="number" id="interest-rate" value="8.5" min="0.1" max="36" step="0.1"
+                            placeholder="e.g. 8.5" oninput="calcEMI()" />
+                        <input type="range" id="rate-slider" min="1" max="30" step="0.1" value="8.5"
+                            oninput="syncSlider('interest-rate','rate-slider'); calcEMI()" />
+                    </div>
+                    <div class="form-group">
+                        <label for="loan-tenure">Loan Tenure (Years)</label>
+                        <input type="number" id="loan-tenure" value="20" min="1" max="30" placeholder="e.g. 20"
+                            oninput="calcEMI()" />
+                        <input type="range" id="tenure-slider" min="1" max="30" step="1" value="20"
+                            oninput="syncSlider('loan-tenure','tenure-slider'); calcEMI()" />
+                    </div>
+                </div>
+
+                <div class="calc-result" id="emi-result">
+                    <div class="label">Monthly EMI</div>
+                    <div class="main-val" id="emi-amount">₹0</div>
+                    <div class="calc-detail">
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="total-amount">₹0</div>
+                            <div class="d-key">Total Amount Payable</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="total-interest">₹0</div>
+                            <div class="d-key">Total Interest</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="principal-display">₹0</div>
+                            <div class="d-key">Principal Amount</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="interest-percent">0%</div>
+                            <div class="d-key">Interest / Principal %</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:1.25rem;">
+                        <div
+                            style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">
+                            <span>Principal</span><span id="principal-pct">0%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" id="principal-bar" style="width:60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amortization Table -->
+            <div class="tool-box" id="amort-box" style="margin-top:1rem;">
+                <h2 style="font-size:1.1rem; font-weight:700; margin-bottom:1rem;">📋 Amortization Schedule (Yearly
+                    Summary)</h2>
+                <div style="overflow-x:auto;">
+                    <table id="amort-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Principal Paid</th>
+                                <th>Interest Paid</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="amort-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <div class="alert alert-warn">⚠️ <strong>Disclaimer:</strong> This calculator provides estimates only.
+                Actual EMI may vary based on your lender's policies and processing fees. <a
+                    href="../disclaimer.html">Read full disclaimer</a></div>
+
+            <div class="seo-content">
+                <h2>What is EMI?</h2>
+                <p>EMI (Equated Monthly Instalment) is a fixed monthly payment made by a borrower to a lender on a set
+                    date each month. EMIs are used to repay both the principal loan amount and the interest charged on
+                    it in equal monthly installments over the loan tenure.</p>
+                <h3>EMI Formula</h3>
+                <p><strong>EMI = P × r × (1+r)^n / ((1+r)^n - 1)</strong></p>
+                <p>Where: P = Principal, r = Monthly interest rate (Annual rate ÷ 12 ÷ 100), n = Number of monthly
+                    installments</p>
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-item">
+                    <div class="faq-q">What is a good EMI to salary ratio in India? <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-a">Financial experts recommend keeping your total EMI at no more than 40-50% of your
+                        monthly take-home salary. Banks in India typically allow up to 50-60% of net income as maximum
+                        EMI eligibility.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Can I prepay my loan to reduce EMI? <span class="faq-icon">+</span></div>
+                    <div class="faq-a">Yes! Most Indian banks allow partial prepayment of loans which can either reduce
+                        your EMI amount or reduce the tenure. Check with your bank for prepayment charges (usually nil
+                        for floating rate loans under RBI guidelines).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">What is the current home loan interest rate in India (2025)? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">Home loan interest rates in India currently range from about 8.35% to 9.50% per
+                        annum depending on the lender, your credit score (CIBIL), and loan amount. Use our calculator to
+                        try different rates.</div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list">
+                    <a href="gst-calculator.html"><span>🧾</span> GST Calculator</a>
+                    <a href="sip-calculator.html"><span>📈</span> SIP Calculator</a>
+                    <a href="percentage-calculator.html"><span>%</span> Percentage Calc</a>
+                    <a href="age-calculator.html"><span>🎂</span> Age Calculator</a>
+                </div>
+            </div>
+            <div class="sidebar-widget">
+                <h3>📖 Related Articles</h3>
+                <div class="tools-list">
+                    <a href="../blog/emi-vs-lump-sum.html"><span>💸</span> EMI vs Lump Sum</a>
+                    <a href="../blog/best-mutual-funds-2025.html"><span>📈</span> Best Mutual Funds 2025</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia. All rights reserved.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a><a
+                        href="../disclaimer.html">Disclaimer</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function syncSlider(inputId, sliderId) {
+            const v = document.getElementById(sliderId).value;
+            document.getElementById(inputId).value = v;
+        }
+        function calcEMI() {
+            const P = parseFloat(document.getElementById('loan-amount').value) || 0;
+            const annualRate = parseFloat(document.getElementById('interest-rate').value) || 0;
+            const years = parseInt(document.getElementById('loan-tenure').value) || 0;
+            // Sync sliders
+            document.getElementById('loan-slider').value = Math.min(P, 10000000);
+            document.getElementById('rate-slider').value = Math.min(annualRate, 30);
+            document.getElementById('tenure-slider').value = Math.min(years, 30);
+
+            if (!P || !annualRate || !years) return;
+            const r = annualRate / 12 / 100;
+            const n = years * 12;
+            const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            const totalAmt = emi * n;
+            const totalInt = totalAmt - P;
+            const pctPrincipal = Math.round((P / totalAmt) * 100);
+
+            document.getElementById('emi-amount').textContent = '₹' + formatINR(Math.round(emi));
+            document.getElementById('total-amount').textContent = '₹' + formatINR(Math.round(totalAmt));
+            document.getElementById('total-interest').textContent = '₹' + formatINR(Math.round(totalInt));
+            document.getElementById('principal-display').textContent = '₹' + formatINR(P);
+            document.getElementById('interest-percent').textContent = Math.round((totalInt / P) * 100) + '%';
+            document.getElementById('principal-pct').textContent = pctPrincipal + '%';
+            document.getElementById('principal-bar').style.width = pctPrincipal + '%';
+            buildAmortTable(P, r, n, emi, years);
+        }
+        function buildAmortTable(P, r, n, emi, years) {
+            const tbody = document.getElementById('amort-body');
+            tbody.innerHTML = '';
+            let balance = P;
+            for (let y = 1; y <= years; y++) {
+                let yearPrincipal = 0, yearInterest = 0;
+                for (let m = 0; m < 12; m++) {
+                    if (balance <= 0) break;
+                    const intPmt = balance * r;
+                    const prinPmt = Math.min(emi - intPmt, balance);
+                    yearInterest += intPmt;
+                    yearPrincipal += prinPmt;
+                    balance -= prinPmt;
+                }
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>Year ${y}</td><td>₹${formatINR(Math.round(yearPrincipal))}</td><td>₹${formatINR(Math.round(yearInterest))}</td><td>₹${formatINR(Math.max(0, Math.round(balance)))}</td>`;
+                tbody.appendChild(tr);
+            }
+        }
+        calcEMI();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Resizer Online Free — Resize Image to Any Size | ToolsIndia</title>
+    <meta name="description"
+        content="Free online image resizer. Resize images to exact pixel dimensions or by percentage. Works in browser, no upload needed." />
+    <link rel="canonical" href="https://toolsindia.in/tools/image-resizer.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Resizer","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free online image resizer. Resize to any dimensions.","url":"https://toolsindia.in/tools/image-resizer.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Image Resizer</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-image">🖼️ Image Tool</span>
+                <h1>Image Resizer — Resize Images Online Free</h1>
+                <p>Upload any image and resize it to exact pixel dimensions or a percentage of the original. 100% in
+                    browser, private and instant.</p>
+            </div>
+            <div class="tool-box">
+                <div class="upload-zone" id="rz-upload" onclick="document.getElementById('rz-file').click()"
+                    ondrop="rzDrop(event)" ondragover="event.preventDefault()">
+                    <div class="icon">↔️</div>
+                    <p>Click to upload image</p><small>JPG, PNG, WebP</small>
+                    <input type="file" id="rz-file" accept="image/*" style="display:none;" onchange="rzLoad(event)" />
+                </div>
+                <img id="rz-preview" class="img-preview" alt="Preview" style="margin-top:1rem;" />
+                <div id="rz-options" class="hidden" style="margin-top:1.5rem;">
+                    <div style="margin-bottom:1rem;">
+                        <div class="btn-group" id="rz-mode-group">
+                            <button class="btn-sm active" onclick="setMode('px',this)">By Pixels</button>
+                            <button class="btn-sm" onclick="setMode('pct',this)">By Percentage</button>
+                        </div>
+                    </div>
+                    <!-- Presets -->
+                    <div class="btn-group" style="margin-bottom:1rem;" id="rz-presets">
+                        <button class="btn-sm" onclick="setPreset(1920,1080)">1920×1080 (Full HD)</button>
+                        <button class="btn-sm" onclick="setPreset(1280,720)">1280×720 (HD)</button>
+                        <button class="btn-sm" onclick="setPreset(800,600)">800×600</button>
+                        <button class="btn-sm" onclick="setPreset(400,400)">400×400 (Instagram)</button>
+                        <button class="btn-sm" onclick="setPreset(150,150)">150×150 (Thumbnail)</button>
+                    </div>
+                    <div id="rz-px-fields">
+                        <div class="form-row">
+                            <div class="form-group"><label for="rz-w">Width (px)</label><input type="number" id="rz-w"
+                                    min="1" oninput="lockAspect('w')" /></div>
+                            <div class="form-group"><label for="rz-h">Height (px)</label><input type="number" id="rz-h"
+                                    min="1" oninput="lockAspect('h')" /></div>
+                        </div>
+                        <label
+                            style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;margin-bottom:1rem;"><input
+                                type="checkbox" id="rz-lock" checked style="width:auto;margin:0;" /> Lock aspect
+                            ratio</label>
+                    </div>
+                    <div id="rz-pct-fields" class="hidden">
+                        <div class="form-group"><label for="rz-pct">Scale Percentage (%)</label><input type="number"
+                                id="rz-pct" value="50" min="1" max="1000" /></div>
+                    </div>
+                    <div class="form-group"><label for="rz-fmt">Output Format</label><select id="rz-fmt">
+                            <option value="image/jpeg">JPEG</option>
+                            <option value="image/png">PNG</option>
+                            <option value="image/webp">WebP</option>
+                        </select></div>
+                    <button class="btn-action" onclick="doResize()" style="width:100%; margin-top:0.5rem;">↔️ Resize
+                        Image</button>
+                    <div id="rz-result" class="hidden" style="margin-top:1.5rem;">
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <div class="val" id="rz-orig-dim">—</div>
+                                <div class="key">Original</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="val" id="rz-new-dim">—</div>
+                                <div class="key">Resized</div>
+                            </div>
+                        </div>
+                        <img id="rz-output" class="img-preview" style="display:block; margin-top:1rem;" alt="Resized" />
+                        <button class="btn-action" style="width:100%; margin-top:1rem;" onclick="rzDownload()">⬇️
+                            Download Resized Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>Common Image Size Requirements</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Recommended Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>WhatsApp Profile</td>
+                            <td>640×640 px</td>
+                        </tr>
+                        <tr>
+                            <td>Instagram Post</td>
+                            <td>1080×1080 px</td>
+                        </tr>
+                        <tr>
+                            <td>Facebook Cover</td>
+                            <td>820×312 px</td>
+                        </tr>
+                        <tr>
+                            <td>YouTube Thumbnail</td>
+                            <td>1280×720 px</td>
+                        </tr>
+                        <tr>
+                            <td>Passport Photo (India)</td>
+                            <td>35×45 mm (300 DPI)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="image-compressor.html"><span>📦</span> Image Compressor</a><a
+                        href="image-crop.html"><span>✂️</span> Image Cropper</a><a
+                        href="image-converter.html"><span>🔁</span> Image Converter</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        let rzImg = null, rzOrigW = 0, rzOrigH = 0, rzResized = null, rzMode = 'px';
+        function rzDrop(e) { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f && f.type.startsWith('image/')) rzProcess(f); }
+        function rzLoad(e) { const f = e.target.files[0]; if (f) rzProcess(f); }
+        async function rzProcess(file) {
+            const url = await readFileAsDataURL(file);
+            rzImg = await loadImage(url);
+            rzOrigW = rzImg.naturalWidth; rzOrigH = rzImg.naturalHeight;
+            document.getElementById('rz-preview').src = url;
+            document.getElementById('rz-preview').style.display = 'block';
+            document.getElementById('rz-w').value = rzOrigW;
+            document.getElementById('rz-h').value = rzOrigH;
+            document.getElementById('rz-orig-dim').textContent = rzOrigW + '×' + rzOrigH;
+            document.getElementById('rz-options').classList.remove('hidden');
+        }
+        function setMode(m, btn) { rzMode = m; document.querySelectorAll('#rz-mode-group .btn-sm').forEach(b => b.classList.remove('active')); btn.classList.add('active'); document.getElementById('rz-px-fields').classList.toggle('hidden', m !== 'px'); document.getElementById('rz-pct-fields').classList.toggle('hidden', m !== 'pct'); document.getElementById('rz-presets').classList.toggle('hidden', m !== 'px'); }
+        function setPreset(w, h) { document.getElementById('rz-w').value = w; document.getElementById('rz-h').value = h; }
+        function lockAspect(changed) { if (!document.getElementById('rz-lock').checked || !rzOrigW) return; const ratio = rzOrigW / rzOrigH; if (changed === 'w') { const w = parseInt(document.getElementById('rz-w').value); document.getElementById('rz-h').value = Math.round(w / ratio); } else { const h = parseInt(document.getElementById('rz-h').value); document.getElementById('rz-w').value = Math.round(h * ratio); } }
+        function doResize() {
+            if (!rzImg) { showToast('Please upload an image first', 'error'); return; }
+            let newW, newH;
+            if (rzMode === 'px') { newW = parseInt(document.getElementById('rz-w').value); newH = parseInt(document.getElementById('rz-h').value); }
+            else { const pct = parseFloat(document.getElementById('rz-pct').value) / 100; newW = Math.round(rzOrigW * pct); newH = Math.round(rzOrigH * pct); }
+            const canvas = document.createElement('canvas');
+            canvas.width = newW; canvas.height = newH;
+            canvas.getContext('2d').drawImage(rzImg, 0, 0, newW, newH);
+            const fmt = document.getElementById('rz-fmt').value;
+            rzResized = { url: canvas.toDataURL(fmt, 0.92), w: newW, h: newH, ext: fmt.split('/')[1] };
+            document.getElementById('rz-output').src = rzResized.url;
+            document.getElementById('rz-new-dim').textContent = newW + '×' + newH;
+            document.getElementById('rz-result').classList.remove('hidden');
+        }
+        function rzDownload() { if (!rzResized) return; const a = document.createElement('a'); a.href = rzResized.url; a.download = 'resized-image.' + rzResized.ext; a.click(); }
+    </script>
+</body>
+
+</html>

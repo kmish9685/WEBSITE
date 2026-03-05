@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>शब्द गणना — निःशुल्क वर्ड काउंटर | ToolsIndia</title>
+    <meta name="description"
+        content="मुफ्त ऑनलाइन शब्द गणना उपकरण। शब्द, अक्षर, वाक्य और पढ़ने का समय तुरंत गिनें। कोई साइनअप नहीं।" />
+    <meta name="keywords" content="शब्द गणना, word counter hindi, शब्द काउंटर, word count online hindi" />
+    <link rel="canonical" href="https://toolsindia.in/hi/tools/word-counter.html" />
+    <link rel="alternate" hreflang="en" href="https://toolsindia.in/tools/word-counter.html" />
+    <link rel="alternate" hreflang="hi" href="https://toolsindia.in/hi/tools/word-counter.html" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"शब्द गणना — Word Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"inLanguage":"hi","url":"https://toolsindia.in/hi/tools/word-counter.html"}</script>
+</head>
+
+<body style="font-family:'Noto Sans Devanagari','Inter',sans-serif;">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo">Tools<span>India</span></a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <nav id="main-nav">
+                <a href="/hi/">होम</a><a href="/hi/tools/" class="active">उपकरण</a><a href="/hi/blog/">ब्लॉग</a><a
+                    href="/">English</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/hi/">हिन्दी</a><span
+            class="sep">›</span><span class="cur">शब्द गणना</span></div>
+
+    <div class="lang-notice">🇮🇳 यह पृष्ठ हिन्दी में है। <a href="../../tools/word-counter.html">English version →</a>
+    </div>
+
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header">
+                <span class="cat-badge cat-text">📝 टेक्स्ट उपकरण</span>
+                <h1>शब्द गणना — निःशुल्क ऑनलाइन उपकरण</h1>
+                <p>किसी भी पाठ में शब्द, अक्षर, वाक्य और पढ़ने का समय तुरंत गिनें। हिन्दी और सभी भाषाओं के लिए।</p>
+            </div>
+            <div class="tool-box">
+                <div class="form-group"><label for="hi-text">यहाँ पाठ टाइप करें या पेस्ट करें</label><textarea
+                        id="hi-text" rows="10" placeholder="यहाँ अपना पाठ लिखें या पेस्ट करें..."
+                        oninput="hiAnalyze()"></textarea></div>
+                <div class="btn-group"><button class="btn-copy"
+                        onclick="copyText(document.getElementById('hi-text').value)">📋 कॉपी करें</button><button
+                        class="btn-clear" onclick="document.getElementById('hi-text').value='';hiAnalyze();">🗑 साफ
+                        करें</button></div>
+                <div class="stat-grid" style="margin-top:1.25rem;">
+                    <div class="stat-item">
+                        <div class="val" id="hi-words">0</div>
+                        <div class="key">शब्द</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="hi-chars">0</div>
+                        <div class="key">अक्षर</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="hi-nospace">0</div>
+                        <div class="key">अक्षर (बिना space)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="hi-sentences">0</div>
+                        <div class="key">वाक्य</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="hi-para">0</div>
+                        <div class="key">अनुच्छेद</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="hi-read">0 मिनट</div>
+                        <div class="key">पढ़ने का समय</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>शब्द गणना उपकरण के बारे में</h2>
+                <p>यह मुफ्त शब्द गणना उपकरण हिन्दी सहित किसी भी भाषा में काम करता है। निबंध, ब्लॉग पोस्ट, या किसी भी पाठ
+                    के लिए तुरंत शब्द और अक्षर गिनें।</p>
+                <h3>इसे कैसे उपयोग करें?</h3>
+                <ul>
+                    <li>ऊपर के बॉक्स में अपना पाठ टाइप करें या पेस्ट करें</li>
+                    <li>परिणाम तुरंत अपडेट हो जाएंगे</li>
+                    <li>आपका डेटा कहीं भी नहीं भेजा जाता</li>
+                </ul>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>संबंधित उपकरण</h3>
+                <div class="tools-list"><a href="emi-calculator.html"><span>🏦</span> EMI कैलकुलेटर</a><a
+                        href="gst-calculator.html"><span>🧾</span> GST कैलकुलेटर</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia. सर्वाधिकार सुरक्षित।</p>
+                <div class="footer-langs"><a href="/">English</a><a href="/hi/">हिन्दी होम</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        function hiAnalyze() { const t = document.getElementById('hi-text').value; const w = t.trim() === '' ? 0 : t.trim().split(/\s+/).length; const c = t.length; const ns = t.replace(/\s/g, '').length; const s = t.trim() === '' ? 0 : (t.match(/[।.!?]+/g) || []).length; const p = t.trim() === '' ? 0 : t.trim().split(/\n\s*\n/).filter(x => x.trim()).length || (t.trim() ? 1 : 0); const r = Math.max(1, Math.ceil(w / 200)); document.getElementById('hi-words').textContent = w; document.getElementById('hi-chars').textContent = c; document.getElementById('hi-nospace').textContent = ns; document.getElementById('hi-sentences').textContent = s; document.getElementById('hi-para').textContent = p; document.getElementById('hi-read').textContent = r + ' मिनट'; }
+    </script>
+</body>
+
+</html>

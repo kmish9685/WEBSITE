@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicate Lines Online — Free Tool | ToolsIndia</title>
+    <meta name="description"
+        content="Free online tool to remove duplicate lines from text. Paste text, click remove duplicates, copy clean result instantly." />
+    <link rel="canonical" href="https://toolsindia.in/tools/remove-duplicate-lines.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Remove Duplicate Lines","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Remove duplicate lines from text instantly.","url":"https://toolsindia.in/tools/remove-duplicate-lines.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Remove Duplicate Lines</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-text">📝 Text Tool</span>
+                <h1>Remove Duplicate Lines</h1>
+                <p>Paste text with repeated lines, remove all duplicates instantly and download or copy the clean
+                    result.</p>
+            </div>
+            <div class="tool-box">
+                <div class="form-group"><label for="dup-input">Input Text (one item per line)</label><textarea
+                        id="dup-input" rows="8"
+                        placeholder="apple&#10;banana&#10;apple&#10;cherry&#10;banana&#10;date"></textarea></div>
+                <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin-bottom:1rem;">
+                    <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; margin:0;"><input
+                            type="checkbox" id="ignore-case" style="width:auto; margin:0;" /> Ignore case
+                        (case-insensitive)</label>
+                    <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; margin:0;"><input
+                            type="checkbox" id="sort-lines" style="width:auto; margin:0;" /> Sort result
+                        alphabetically</label>
+                    <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; margin:0;"><input
+                            type="checkbox" id="trim-lines" style="width:auto; margin:0;" checked /> Trim
+                        whitespace</label>
+                </div>
+                <button class="btn-action" onclick="removeDuplicates()" style="margin-bottom:1rem;">🗑 Remove
+                    Duplicates</button>
+                <div id="dup-stats" class="hidden"
+                    style="padding:0.75rem; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:var(--radius-sm); margin-bottom:1rem; font-size:0.85rem; color:var(--success);">
+                </div>
+                <div class="form-group"><label for="dup-output">Clean Result</label><textarea id="dup-output" rows="8"
+                        readonly placeholder="Result will appear here..."></textarea></div>
+                <div class="btn-group"><button class="btn-copy"
+                        onclick="copyText(document.getElementById('dup-output').value)">📋 Copy Result</button><button
+                        class="btn-clear"
+                        onclick="document.getElementById('dup-input').value='';document.getElementById('dup-output').value='';document.getElementById('dup-stats').classList.add('hidden');">🗑
+                        Clear</button></div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>About Remove Duplicate Lines Tool</h2>
+                <p>This tool removes duplicate entries from a list of text. It's useful for cleaning up email lists,
+                    keyword lists, product lists, and any data with repeated entries.</p>
+                <div class="faq-item">
+                    <div class="faq-q">Does this work with comma-separated lists? <span class="faq-icon">+</span></div>
+                    <div class="faq-a">This tool works with line-separated text (one item per line). For comma-separated
+                        lists, first replace commas with newlines, then use this tool.</div>
+                </div>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="word-counter.html"><span>📊</span> Word Counter</a><a
+                        href="case-converter.html"><span>🔤</span> Case Converter</a><a
+                        href="text-reverser.html"><span>🔄</span> Text Reverser</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function removeDuplicates() {
+            const input = document.getElementById('dup-input').value;
+            const ignoreCase = document.getElementById('ignore-case').checked;
+            const sort = document.getElementById('sort-lines').checked;
+            const trim = document.getElementById('trim-lines').checked;
+            let lines = input.split('\n');
+            if (trim) lines = lines.map(l => l.trim());
+            const total = lines.length;
+            const seen = new Set();
+            const unique = [];
+            for (const ln of lines) {
+                const key = ignoreCase ? ln.toLowerCase() : ln;
+                if (!seen.has(key)) { seen.add(key); unique.push(ln); }
+            }
+            let result = unique;
+            if (sort) result = [...result].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+            const removed = total - unique.length;
+            document.getElementById('dup-output').value = result.join('\n');
+            const stats = document.getElementById('dup-stats');
+            stats.classList.remove('hidden');
+            stats.textContent = `✓ Done! ${total} lines input → ${unique.length} unique lines. Removed ${removed} duplicate${removed !== 1 ? 's' : ''}.`;
+        }
+    </script>
+</body>
+
+</html>

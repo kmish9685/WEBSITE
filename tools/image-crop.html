@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Cropper Online Free — Crop Image to Any Size | ToolsIndia</title>
+    <meta name="description"
+        content="Free online image cropper. Crop images with custom dimensions or preset ratios (1:1, 16:9, 4:3). Download instantly." />
+    <link rel="canonical" href="https://toolsindia.in/tools/image-crop.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Cropper","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"url":"https://toolsindia.in/tools/image-crop.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Image Cropper</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-image">✂️ Image Tool</span>
+                <h1>Image Cropper — Crop Images Online</h1>
+                <p>Crop any image by specifying exact coordinates or by choosing a preset aspect ratio. Works 100% in
+                    browser.</p>
+            </div>
+            <div class="tool-box">
+                <div class="upload-zone" onclick="document.getElementById('crop-file').click()" ondrop="cropDrop(event)"
+                    ondragover="event.preventDefault()">
+                    <div class="icon">✂️</div>
+                    <p>Click to upload image</p><small>JPG, PNG, WebP</small>
+                    <input type="file" id="crop-file" accept="image/*" style="display:none;"
+                        onchange="cropLoad(event)" />
+                </div>
+                <div id="crop-options" class="hidden" style="margin-top:1.5rem;">
+                    <div style="margin-bottom:1rem;">
+                        <div class="btn-group" id="aspect-group">
+                            <button class="btn-sm" onclick="setAspect(null,this)">Free</button>
+                            <button class="btn-sm" onclick="setAspect(1,this)">1:1 (Square)</button>
+                            <button class="btn-sm" onclick="setAspect(16/9,this)">16:9</button>
+                            <button class="btn-sm" onclick="setAspect(4/3,this)">4:3</button>
+                            <button class="btn-sm" onclick="setAspect(3/2,this)">3:2</button>
+                        </div>
+                    </div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Set crop region (from
+                        top-left of image in pixels):</p>
+                    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.75rem; margin-bottom:1rem;">
+                        <div class="form-group"><label>X (left)</label><input type="number" id="crop-x" value="0"
+                                min="0" oninput="updateCrop()" /></div>
+                        <div class="form-group"><label>Y (top)</label><input type="number" id="crop-y" value="0" min="0"
+                                oninput="updateCrop()" /></div>
+                        <div class="form-group"><label>Width</label><input type="number" id="crop-w" value="100" min="1"
+                                oninput="updateCrop()" /></div>
+                        <div class="form-group"><label>Height</label><input type="number" id="crop-h" value="100"
+                                min="1" oninput="updateCrop()" /></div>
+                    </div>
+                    <p id="orig-dims" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;"></p>
+                    <button class="btn-action" onclick="doCrop()" style="width:100%;">✂️ Crop Image</button>
+                    <div id="crop-result" class="hidden" style="margin-top:1.5rem;">
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <div class="val" id="crop-result-dims">—</div>
+                                <div class="key">Cropped Size</div>
+                            </div>
+                        </div>
+                        <canvas id="crop-canvas"
+                            style="max-width:100%; margin-top:1rem; border-radius:var(--radius-sm); border:1px solid var(--card-border);"></canvas>
+                        <button class="btn-action" style="width:100%; margin-top:1rem;" onclick="cropDownload()">⬇️
+                            Download Cropped Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>Common Crop Sizes</h2>
+                <ul>
+                    <li><strong>Instagram Post:</strong> 1:1 square or 4:5 portrait</li>
+                    <li><strong>YouTube Thumbnail:</strong> 16:9 (1280×720)</li>
+                    <li><strong>Twitter / X Header:</strong> 1500×500 pixels</li>
+                    <li><strong>Passport Photo India:</strong> 35×45mm (crop and resize)</li>
+                </ul>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="image-compressor.html"><span>📦</span> Image Compressor</a><a
+                        href="image-resizer.html"><span>↔️</span> Image Resizer</a><a
+                        href="image-converter.html"><span>🔁</span> Image Converter</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        let cropImg = null, cropAspect = null;
+        function cropDrop(e) { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f && f.type.startsWith('image/')) cropProcess(f); }
+        function cropLoad(e) { const f = e.target.files[0]; if (f) cropProcess(f); }
+        async function cropProcess(file) { const url = await readFileAsDataURL(file); cropImg = await loadImage(url); document.getElementById('crop-w').value = Math.min(cropImg.naturalWidth, 400); document.getElementById('crop-h').value = Math.min(cropImg.naturalHeight, 400); document.getElementById('orig-dims').textContent = 'Original image: ' + cropImg.naturalWidth + '×' + cropImg.naturalHeight + ' pixels'; document.getElementById('crop-options').classList.remove('hidden'); }
+        function setAspect(ratio, btn) { cropAspect = ratio; document.querySelectorAll('#aspect-group .btn-sm').forEach(b => b.classList.remove('active')); btn.classList.add('active'); updateCrop(); }
+        function updateCrop() { if (!cropAspect) return; const w = parseInt(document.getElementById('crop-w').value) || 100; document.getElementById('crop-h').value = Math.round(w / cropAspect); }
+        function doCrop() { if (!cropImg) { showToast('Please upload an image first', 'error'); return; } const x = parseInt(document.getElementById('crop-x').value) || 0, y = parseInt(document.getElementById('crop-y').value) || 0, w = parseInt(document.getElementById('crop-w').value) || 100, h = parseInt(document.getElementById('crop-h').value) || 100; const canvas = document.getElementById('crop-canvas'); canvas.width = w; canvas.height = h; canvas.getContext('2d').drawImage(cropImg, x, y, w, h, 0, 0, w, h); document.getElementById('crop-result-dims').textContent = w + '×' + h; document.getElementById('crop-result').classList.remove('hidden'); }
+        function cropDownload() { const canvas = document.getElementById('crop-canvas'); downloadCanvas(canvas, 'cropped-image.jpg', 'image/jpeg', 0.92); }
+    </script>
+</body>
+
+</html>

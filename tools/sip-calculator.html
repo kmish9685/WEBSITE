@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIP Calculator India — Mutual Fund SIP Returns Calculator | ToolsIndia</title>
+    <meta name="description"
+        content="Free SIP calculator to estimate returns on monthly mutual fund SIP investments in India. Calculate wealth created with compound growth." />
+    <meta name="keywords"
+        content="sip calculator, sip calculator india, mutual fund sip calculator, monthly sip returns, systematic investment plan" />
+    <link rel="canonical" href="https://toolsindia.in/tools/sip-calculator.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SIP Calculator India","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free SIP calculator for mutual fund investments in India.","url":"https://toolsindia.in/tools/sip-calculator.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">SIP Calculator</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-finance">📈 Finance Tool</span>
+                <h1>SIP Calculator — Mutual Fund Returns Calculator</h1>
+                <p>Estimate the wealth you can create with a monthly SIP (Systematic Investment Plan) in mutual funds.
+                    Uses compound interest formula.</p>
+            </div>
+            <div class="tool-box">
+                <div class="form-group"><label for="sip-amount">Monthly SIP Amount (₹)</label><input type="number"
+                        id="sip-amount" value="5000" min="100" oninput="calcSIP()" /><input type="range" id="sip-slider"
+                        min="500" max="100000" step="500" value="5000"
+                        oninput="syncSlider('sip-amount','sip-slider');calcSIP()" /></div>
+                <div class="form-row">
+                    <div class="form-group"><label for="sip-rate">Expected Annual Return (%)</label><input type="number"
+                            id="sip-rate" value="12" min="1" max="30" step="0.5" oninput="calcSIP()" /><input
+                            type="range" id="sip-rate-slider" min="1" max="30" step="0.5" value="12"
+                            oninput="syncSlider('sip-rate','sip-rate-slider');calcSIP()" /></div>
+                    <div class="form-group"><label for="sip-years">Investment Period (Years)</label><input type="number"
+                            id="sip-years" value="10" min="1" max="40" oninput="calcSIP()" /><input type="range"
+                            id="sip-years-slider" min="1" max="40" step="1" value="10"
+                            oninput="syncSlider('sip-years','sip-years-slider');calcSIP()" /></div>
+                </div>
+                <div class="calc-result" id="sip-result">
+                    <div class="label">Estimated Returns (Wealth Gained)</div>
+                    <div class="main-val" id="sip-returns">₹0</div>
+                    <div class="calc-detail">
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="sip-invested">₹0</div>
+                            <div class="d-key">Total Invested</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="sip-total">₹0</div>
+                            <div class="d-key">Total Value (Maturity)</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="sip-multiplier">0x</div>
+                            <div class="d-key">Growth Multiplier</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="sip-monthly-return">₹0</div>
+                            <div class="d-key">Monthly Returns Gained</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:1rem;">
+                        <div
+                            style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-muted);margin-bottom:0.4rem;">
+                            <span>Invested Amount</span><span id="sip-invest-pct">50%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" id="sip-invest-bar"
+                                style="width:50%;background:linear-gradient(90deg,#6C63FF,#06B6D4)"></div>
+                        </div>
+                        <div
+                            style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-muted);margin-bottom:0.4rem;margin-top:0.5rem;">
+                            <span>Returns</span><span id="sip-return-pct">50%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" id="sip-return-bar"
+                                style="width:50%;background:linear-gradient(90deg,#10B981,#06B6D4)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="alert alert-warn">⚠️ Mutual fund investments are subject to market risks. Past returns do not
+                guarantee future performance. This is an estimate only. Read the offer document carefully before
+                investing.</div>
+            <div class="seo-content">
+                <h2>What is SIP?</h2>
+                <p>SIP (Systematic Investment Plan) is a method to invest in mutual funds by putting in a fixed amount
+                    every month. It leverages <strong>rupee cost averaging</strong> and <strong>power of
+                        compounding</strong> to build wealth over time.</p>
+                <div class="faq-item">
+                    <div class="faq-q">What is a good SIP return rate to expect in India? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">Equity mutual funds in India have historically returned 12–15% annually over long
+                        periods (10+ years). Debt funds typically return 6–8%. For a conservative estimate, use 10–12%
+                        for equity SIPs.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Can I stop a SIP anytime? <span class="faq-icon">+</span></div>
+                    <div class="faq-a">Yes, you can pause or stop a SIP anytime without penalty. However, the
+                        already-invested amount remains in the mutual fund and can be withdrawn subject to exit load and
+                        tax.</div>
+                </div>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="emi-calculator.html"><span>🏦</span> EMI Calculator</a><a
+                        href="gst-calculator.html"><span>🧾</span> GST Calculator</a><a
+                        href="percentage-calculator.html"><span>%</span> Percentage</a><a
+                        href="age-calculator.html"><span>🎂</span> Age Calculator</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia. Mutual fund investments subject to market risk.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a><a
+                        href="../disclaimer.html">Disclaimer</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function syncSlider(inputId, sliderId) { document.getElementById(inputId).value = document.getElementById(sliderId).value; }
+        function calcSIP() {
+            const P = parseFloat(document.getElementById('sip-amount').value) || 0;
+            const r = (parseFloat(document.getElementById('sip-rate').value) || 0) / 100 / 12;
+            const n = (parseInt(document.getElementById('sip-years').value) || 0) * 12;
+            document.getElementById('sip-slider').value = Math.min(P, 100000);
+            document.getElementById('sip-rate-slider').value = Math.min(parseFloat(document.getElementById('sip-rate').value) || 0, 30);
+            document.getElementById('sip-years-slider').value = Math.min(parseInt(document.getElementById('sip-years').value) || 0, 40);
+            if (!P || !r || !n) return;
+            const maturity = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+            const invested = P * n;
+            const returns = maturity - invested;
+            const multiplier = (maturity / invested).toFixed(2);
+            const monthlyReturn = returns / n;
+            const investedPct = Math.round((invested / maturity) * 100);
+            const returnsPct = 100 - investedPct;
+            document.getElementById('sip-returns').textContent = '₹' + formatINR(Math.round(returns));
+            document.getElementById('sip-invested').textContent = '₹' + formatINR(Math.round(invested));
+            document.getElementById('sip-total').textContent = '₹' + formatINR(Math.round(maturity));
+            document.getElementById('sip-multiplier').textContent = multiplier + 'x';
+            document.getElementById('sip-monthly-return').textContent = '₹' + formatINR(Math.round(monthlyReturn));
+            document.getElementById('sip-invest-pct').textContent = investedPct + '%';
+            document.getElementById('sip-return-pct').textContent = returnsPct + '%';
+            document.getElementById('sip-invest-bar').style.width = investedPct + '%';
+            document.getElementById('sip-return-bar').style.width = returnsPct + '%';
+        }
+        calcSIP();
+    </script>
+</body>
+
+</html>

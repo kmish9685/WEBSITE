@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Core Pages -->
+  <url><loc>https://toolsindia.in/</loc><lastmod>2025-03-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolsindia.in/hi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolsindia.in/"/>
+  </url>
+  <url><loc>https://toolsindia.in/about.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://toolsindia.in/contact.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://toolsindia.in/privacy-policy.html</loc><lastmod>2025-03-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://toolsindia.in/disclaimer.html</loc><lastmod>2025-03-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+
+  <!-- Tools Directory -->
+  <url><loc>https://toolsindia.in/tools/</loc><lastmod>2025-03-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Text Tools -->
+  <url><loc>https://toolsindia.in/tools/word-counter.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/case-converter.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/remove-duplicate-lines.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/character-counter.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/tools/text-reverser.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Finance -->
+  <url><loc>https://toolsindia.in/tools/emi-calculator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://toolsindia.in/tools/gst-calculator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://toolsindia.in/tools/percentage-calculator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/age-calculator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/sip-calculator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Image Tools -->
+  <url><loc>https://toolsindia.in/tools/image-compressor.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://toolsindia.in/tools/image-resizer.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/image-crop.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/image-converter.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- SEO Tools -->
+  <url><loc>https://toolsindia.in/tools/meta-tag-generator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/keyword-density.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/tools/og-tag-generator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- PDF -->
+  <url><loc>https://toolsindia.in/tools/pdf-merger.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- Blog -->
+  <url><loc>https://toolsindia.in/blog/</loc><lastmod>2025-03-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolsindia.in/blog/emi-vs-lump-sum.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/blog/best-mutual-funds-2025.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/blog/upsc-preparation-guide.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/blog/how-to-compress-images.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/blog/neet-ug-eligibility.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Hindi Section -->
+  <url><loc>https://toolsindia.in/hi/</loc><lastmod>2025-03-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolsindia.in/hi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolsindia.in/"/>
+  </url>
+  <url><loc>https://toolsindia.in/hi/tools/word-counter.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/hi/tools/emi-calculator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/hi/tools/gst-calculator.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolsindia.in/hi/blog/emi-vs-lump-sum.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://toolsindia.in/hi/blog/upsc-taiyari.html</loc><lastmod>2025-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

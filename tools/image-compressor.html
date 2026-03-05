@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Compressor Online — Compress Images Free | ToolsIndia</title>
+    <meta name="description"
+        content="Compress JPG, PNG, WebP images online for free. Reduce file size without losing quality. Works 100% in browser — no upload needed." />
+    <meta name="keywords"
+        content="image compressor, compress image online, reduce image size, png compressor, jpg compressor, free image compression" />
+    <link rel="canonical" href="https://toolsindia.in/tools/image-compressor.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Compressor","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free online image compressor. Compress images in browser without uploading.","url":"https://toolsindia.in/tools/image-compressor.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Image Compressor</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-image">🖼️ Image Tool</span>
+                <h1>Image Compressor — Reduce Image Size Online</h1>
+                <p>Compress JPG, PNG, and WebP images without losing quality. 100% free, works right in your browser.
+                    Your images are never uploaded to any server.</p>
+            </div>
+            <div class="tool-box">
+                <div class="upload-zone" id="upload-zone" onclick="document.getElementById('img-file').click()"
+                    ondrop="handleDrop(event)" ondragover="event.preventDefault()" ondragleave="">
+                    <div class="icon">📦</div>
+                    <p>Click to upload or drag & drop an image here</p>
+                    <small>Supports JPG, PNG, WebP • Max 20MB</small>
+                    <input type="file" id="img-file" accept="image/jpeg,image/png,image/webp" style="display:none;"
+                        onchange="loadImage_compress(event)" />
+                </div>
+                <img id="preview-orig" class="img-preview" alt="Original image preview"
+                    style="max-height:200px; width:100%; object-fit:contain; margin-top:1rem;" />
+                <div id="img-info-orig" class="img-info hidden"></div>
+                <div id="compress-options" class="hidden" style="margin-top:1.5rem;">
+                    <div class="form-group">
+                        <label for="quality-slider">Quality: <strong id="quality-val">80</strong>%</label>
+                        <input type="range" id="quality-slider" min="1" max="100" value="80"
+                            oninput="document.getElementById('quality-val').textContent=this.value; compressImage()" />
+                    </div>
+                    <div class="form-group">
+                        <label for="output-format">Output Format</label>
+                        <select id="output-format" onchange="compressImage()">
+                            <option value="image/jpeg">JPEG</option>
+                            <option value="image/png">PNG</option>
+                            <option value="image/webp">WebP</option>
+                        </select>
+                    </div>
+                    <div id="compress-result" class="hidden">
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <div class="val" id="orig-size">0</div>
+                                <div class="key">Original Size</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="val" id="comp-size">0</div>
+                                <div class="key">Compressed Size</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="val" id="savings">0%</div>
+                                <div class="key">Size Reduced</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="val" id="comp-dims">—</div>
+                                <div class="key">Dimensions</div>
+                            </div>
+                        </div>
+                        <img id="preview-comp" class="img-preview" style="margin-top:1rem; display:block;"
+                            alt="Compressed image" />
+                        <button class="btn-action" style="margin-top:1rem; width:100%;"
+                            onclick="downloadCompressed()">⬇️ Download Compressed Image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="premium-teaser">
+                <div class="lock">🔒</div>
+                <div>
+                    <h4>Premium Features</h4>
+                    <p>Batch compress multiple images, custom output resolution, lossless PNG compression — coming soon!
+                    </p>
+                </div><span class="badge-soon">Coming Soon</span>
+            </div>
+            <div class="seo-content">
+                <h2>How to Compress an Image Online</h2>
+                <ol>
+                    <li>Click "Upload" or drag & drop your image (JPG, PNG, or WebP)</li>
+                    <li>Adjust the quality slider (80% is usually a good balance)</li>
+                    <li>Click "Download Compressed Image"</li>
+                </ol>
+                <p>Your images never leave your device — all compression happens in the browser using the Canvas API.
+                </p>
+                <div class="faq-item">
+                    <div class="faq-q">Does compression reduce image quality visibly? <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-a">At 70-80% quality, the visual difference is almost undetectable while the file
+                        size reduces by 50-70%. Go below 50% for aggressive compression where some quality loss may be
+                        visible.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Why can't I compress PNG to smaller than JPEG? <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-a">PNG is a lossless format, so our browser-based compressor works best with JPEG
+                        and WebP. For PNGs, convert to JPEG/WebP format using the output format selector above for the
+                        best size reduction.</div>
+                </div>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="image-resizer.html"><span>↔️</span> Image Resizer</a><a
+                        href="image-crop.html"><span>✂️</span> Image Cropper</a><a
+                        href="image-converter.html"><span>🔁</span> Image Converter</a><a
+                        href="pdf-merger.html"><span>📎</span> PDF Merger</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia. Images never leave your device.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a><a
+                        href="../privacy-policy.html">Privacy</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        let origFile = null, origImg = null, compressedDataURL = null;
+        function handleDrop(e) { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f && f.type.startsWith('image/')) { processFile(f); } }
+        function loadImage_compress(e) { const f = e.target.files[0]; if (f) processFile(f); }
+        async function processFile(file) {
+            origFile = file;
+            const url = await readFileAsDataURL(file);
+            origImg = await loadImage(url);
+            document.getElementById('preview-orig').src = url;
+            document.getElementById('preview-orig').style.display = 'block';
+            document.getElementById('orig-size').textContent = formatBytes(file.size);
+            document.getElementById('compress-options').classList.remove('hidden');
+            compressImage();
+        }
+        function compressImage() {
+            if (!origImg) return;
+            const quality = parseInt(document.getElementById('quality-slider').value) / 100;
+            const format = document.getElementById('output-format').value;
+            const canvas = document.createElement('canvas');
+            canvas.width = origImg.naturalWidth; canvas.height = origImg.naturalHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(origImg, 0, 0);
+            compressedDataURL = canvas.toDataURL(format, quality);
+            document.getElementById('preview-comp').src = compressedDataURL;
+            // Estimate compressed size
+            const b64 = compressedDataURL.split(',')[1];
+            const bytes = Math.round(b64.length * 3 / 4);
+            const orig = origFile.size;
+            const savings = Math.round((1 - bytes / orig) * 100);
+            document.getElementById('comp-size').textContent = formatBytes(bytes);
+            document.getElementById('savings').textContent = (savings > 0 ? savings + '% smaller' : 'Similar size');
+            document.getElementById('comp-dims').textContent = origImg.naturalWidth + '×' + origImg.naturalHeight;
+            document.getElementById('compress-result').classList.remove('hidden');
+        }
+        function downloadCompressed() {
+            if (!compressedDataURL) return;
+            const format = document.getElementById('output-format').value;
+            const ext = format.split('/')[1];
+            const a = document.createElement('a');
+            a.href = compressedDataURL;
+            a.download = 'compressed-image.' + ext;
+            a.click();
+            showToast('✓ Image downloaded!');
+        }
+    </script>
+</body>
+
+</html>

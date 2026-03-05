@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator India — Calculate Exact Age from Date of Birth | ToolsIndia</title>
+    <meta name="description"
+        content="Free age calculator. Calculate your exact age in years, months, days from date of birth. Find next birthday and days until birthday. Used for govt forms." />
+    <meta name="keywords"
+        content="age calculator, age calculator india, date of birth calculator, exact age calculator, years months days" />
+    <link rel="canonical" href="https://toolsindia.in/tools/age-calculator.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Age Calculator India","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Calculate exact age in years, months and days from date of birth.","url":"https://toolsindia.in/tools/age-calculator.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Age Calculator</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-finance">💰 Finance Tool</span>
+                <h1>Age Calculator — Calculate Exact Age from DOB</h1>
+                <p>Calculate your exact age in years, months, and days. Find your next birthday and total days lived.
+                    Perfect for government forms, UPSC, SSC, NEET eligibility.</p>
+            </div>
+            <div class="tool-box">
+                <div class="form-row">
+                    <div class="form-group"><label for="dob">Date of Birth</label><input type="date" id="dob" max=""
+                            oninput="calcAge()" /></div>
+                    <div class="form-group"><label for="calc-date">Calculate Age As On</label><input type="date"
+                            id="calc-date" oninput="calcAge()" /></div>
+                </div>
+                <button class="btn-action" onclick="calcAge()" style="margin-bottom:1rem;">🎂 Calculate Age</button>
+                <div id="age-result" class="hidden">
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="val" id="age-years">0</div>
+                            <div class="key">Years</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="val" id="age-months">0</div>
+                            <div class="key">Months</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="val" id="age-days">0</div>
+                            <div class="key">Days</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="val" id="age-total-days">0</div>
+                            <div class="key">Total Days Lived</div>
+                        </div>
+                    </div>
+                    <div class="calc-result" style="margin-top:1rem;">
+                        <div class="label">Next Birthday</div>
+                        <div class="main-val" id="next-bday" style="font-size:1.4rem;">—</div>
+                        <div style="color:var(--text-muted); font-size:0.88rem; margin-top:0.5rem;" id="bday-days-left">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>Why Use an Age Calculator?</h2>
+                <p>Knowing your exact age in years, months and days is required for government job applications,
+                    competitive exams (UPSC, SSC, NEET, JEE), scholarship forms, and passport applications in India.</p>
+                <div class="faq-item">
+                    <div class="faq-q">What is the age limit for UPSC exam? <span class="faq-icon">+</span></div>
+                    <div class="faq-a">For UPSC Civil Services, General category candidates must be between 21 and 32
+                        years. OBC candidates get 3 years relaxation (up to 35) and SC/ST get 5 years (up to 37). Age is
+                        calculated as of the 1st of August in the year of examination.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">How is age calculated for government exams in India? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">Age for government exams is typically calculated as of a specific date mentioned
+                        in the notification (e.g., 1st January or 1st August). Use our "Calculate Age As On" field to
+                        enter the specific cutoff date.</div>
+                </div>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="emi-calculator.html"><span>🏦</span> EMI Calculator</a><a
+                        href="gst-calculator.html"><span>🧾</span> GST Calculator</a><a
+                        href="sip-calculator.html"><span>📈</span> SIP Calculator</a><a
+                        href="percentage-calculator.html"><span>%</span> Percentage Calc</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            document.getElementById('calc-date').value = today.toISOString().split('T')[0];
+            document.getElementById('dob').max = today.toISOString().split('T')[0];
+        });
+        function calcAge() {
+            const dobVal = document.getElementById('dob').value;
+            const calcVal = document.getElementById('calc-date').value;
+            if (!dobVal || !calcVal) return;
+            const dob = new Date(dobVal);
+            const calcDate = new Date(calcVal);
+            if (dob >= calcDate) { showToast('Date of birth must be before the calculation date', 'error'); return; }
+            let years = calcDate.getFullYear() - dob.getFullYear();
+            let months = calcDate.getMonth() - dob.getMonth();
+            let days = calcDate.getDate() - dob.getDate();
+            if (days < 0) { months--; const prevMonth = new Date(calcDate.getFullYear(), calcDate.getMonth(), 0); days += prevMonth.getDate(); }
+            if (months < 0) { years--; months += 12; }
+            const totalDays = Math.floor((calcDate - dob) / (1000 * 60 * 60 * 24));
+            // Next birthday
+            let nextBday = new Date(calcDate.getFullYear(), dob.getMonth(), dob.getDate());
+            if (nextBday <= calcDate) nextBday.setFullYear(calcDate.getFullYear() + 1);
+            const daysUntil = Math.ceil((nextBday - calcDate) / (1000 * 60 * 60 * 24));
+            const months_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('age-years').textContent = years;
+            document.getElementById('age-months').textContent = months;
+            document.getElementById('age-days').textContent = days;
+            document.getElementById('age-total-days').textContent = totalDays.toLocaleString('en-IN');
+            document.getElementById('next-bday').textContent = months_names[nextBday.getMonth()] + ' ' + nextBday.getDate() + ', ' + nextBday.getFullYear();
+            document.getElementById('bday-days-left').textContent = `🎉 ${daysUntil} days until your next birthday!`;
+            document.getElementById('age-result').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

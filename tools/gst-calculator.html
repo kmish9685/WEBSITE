@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GST Calculator India — Add/Remove GST Online Free | ToolsIndia</title>
+    <meta name="description"
+        content="Free GST calculator for India. Add or remove GST at 5%, 12%, 18%, 28% from any amount. Get GST inclusive and exclusive prices instantly." />
+    <meta name="keywords"
+        content="gst calculator, gst calculator india, add gst, remove gst, gst inclusive exclusive, cgst sgst calculator" />
+    <link rel="canonical" href="https://toolsindia.in/tools/gst-calculator.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"GST Calculator India","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free GST calculator for India. Add or remove GST at 5%, 12%, 18%, 28%.","url":"https://toolsindia.in/tools/gst-calculator.html"}
+  </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo">Tools<span>India</span></a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <nav id="main-nav">
+                <a href="/">Home</a><a href="../tools/" class="active">Tools</a><a href="../blog/">Blog</a>
+                <a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">GST Calculator</span></div>
+
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header">
+                <span class="cat-badge cat-finance">🧾 Finance Tool</span>
+                <h1>GST Calculator India — Add or Remove GST</h1>
+                <p>Calculate GST for any amount at 5%, 12%, 18%, or 28%. View CGST, SGST and IGST breakdown instantly.
+                </p>
+            </div>
+
+            <div class="tool-box">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gst-amount">Enter Amount (₹)</label>
+                        <input type="number" id="gst-amount" placeholder="e.g. 1000" min="0" oninput="calcGST()" />
+                    </div>
+                    <div class="form-group">
+                        <label for="gst-rate">GST Rate</label>
+                        <select id="gst-rate" onchange="calcGST()">
+                            <option value="3">3% — Precious metals</option>
+                            <option value="5">5% — Essential goods</option>
+                            <option value="12">12% — Standard goods</option>
+                            <option value="18" selected>18% — Standard services</option>
+                            <option value="28">28% — Luxury / Sin goods</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Calculation Type</label>
+                    <div class="btn-group" id="gst-type-group">
+                        <button class="btn-sm active" data-type="add" onclick="setType('add', this)">➕ Add GST
+                            (Exclusive → Inclusive)</button>
+                        <button class="btn-sm" data-type="remove" onclick="setType('remove', this)">➖ Remove GST
+                            (Inclusive → Exclusive)</button>
+                    </div>
+                </div>
+
+                <div class="calc-result" id="gst-result" style="display:none;">
+                    <div class="label" id="gst-label">GST Amount</div>
+                    <div class="main-val" id="gst-tax-amount">₹0</div>
+                    <div class="calc-detail">
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="gst-original">₹0</div>
+                            <div class="d-key" id="d-original">Original Price</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="gst-final">₹0</div>
+                            <div class="d-key" id="d-final">Price + GST</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="gst-cgst">₹0</div>
+                            <div class="d-key">CGST (Intra-state)</div>
+                        </div>
+                        <div class="calc-detail-item">
+                            <div class="d-val" id="gst-sgst">₹0</div>
+                            <div class="d-key">SGST (Intra-state)</div>
+                        </div>
+                    </div>
+                    <div
+                        style="margin-top:1rem; padding:0.75rem; background:rgba(6,182,212,0.08); border-radius:var(--radius-sm);">
+                        <p style="font-size:0.83rem; color:var(--text-muted);"><strong>IGST (Inter-state):</strong>
+                            <span id="gst-igst">₹0</span> (same as total GST, used for inter-state transactions)</p>
+                    </div>
+                    <button class="btn-copy" style="margin-top:1rem;" onclick="copyGSTResult()">📋 Copy Result</button>
+                </div>
+            </div>
+
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <div class="alert alert-info" style="margin-bottom:1rem;">ℹ️ CGST and SGST are each half of the GST rate for
+                intra-state transactions. IGST equals the full GST rate for inter-state.</div>
+
+            <div class="seo-content">
+                <h2>GST Rates in India (2025)</h2>
+                <table style="margin-top:0.5rem;">
+                    <thead>
+                        <tr>
+                            <th>GST Slab</th>
+                            <th>Applies To</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0%</td>
+                            <td>Essential items</td>
+                            <td>Fresh vegetables, milk, eggs, books</td>
+                        </tr>
+                        <tr>
+                            <td>3%</td>
+                            <td>Special items</td>
+                            <td>Gold, silver, jewellery</td>
+                        </tr>
+                        <tr>
+                            <td>5%</td>
+                            <td>Basic goods</td>
+                            <td>Sugar, tea, coffee, medicines</td>
+                        </tr>
+                        <tr>
+                            <td>12%</td>
+                            <td>Standard</td>
+                            <td>Processed foods, computers, business class air tickets</td>
+                        </tr>
+                        <tr>
+                            <td>18%</td>
+                            <td>Most services</td>
+                            <td>Restaurants, telecom, financial services, IT services</td>
+                        </tr>
+                        <tr>
+                            <td>28%</td>
+                            <td>Luxury/sin goods</td>
+                            <td>Cars, tobacco, luxury hotels, AC theatres</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="faq-item" style="margin-top:1.5rem;">
+                    <div class="faq-q">What is the difference between CGST, SGST and IGST? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">CGST (Central GST) goes to the central government and SGST (State GST) goes to
+                        the state government. Both are charged for intra-state transactions at half the GST rate each.
+                        IGST (Integrated GST) is charged on inter-state transactions and goes to the central government.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">How to reverse calculate GST from a total inclusive amount? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">Select "Remove GST" in our calculator above. Formula: Original Price = Total
+                        Amount × 100 / (100 + GST%). Our tool does this automatically.</div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list">
+                    <a href="emi-calculator.html"><span>🏦</span> EMI Calculator</a>
+                    <a href="percentage-calculator.html"><span>%</span> Percentage Calc</a>
+                    <a href="sip-calculator.html"><span>📈</span> SIP Calculator</a>
+                    <a href="age-calculator.html"><span>🎂</span> Age Calculator</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia. All rights reserved.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a><a
+                        href="../disclaimer.html">Disclaimer</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        let gstType = 'add';
+        function setType(type, btn) {
+            gstType = type;
+            document.querySelectorAll('#gst-type-group .btn-sm').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            calcGST();
+        }
+        function calcGST() {
+            const amt = parseFloat(document.getElementById('gst-amount').value);
+            const rate = parseFloat(document.getElementById('gst-rate').value);
+            if (!amt || isNaN(amt)) { document.getElementById('gst-result').style.display = 'none'; return; }
+            document.getElementById('gst-result').style.display = 'block';
+            let original, final_, tax;
+            if (gstType === 'add') {
+                original = amt; tax = amt * rate / 100; final_ = amt + tax;
+                document.getElementById('gst-label').textContent = 'GST Amount Added';
+                document.getElementById('d-original').textContent = 'Original Price (excl. GST)';
+                document.getElementById('d-final').textContent = 'Total Price (incl. GST)';
+            } else {
+                final_ = amt; original = amt * 100 / (100 + rate); tax = final_ - original;
+                document.getElementById('gst-label').textContent = 'GST Amount Removed';
+                document.getElementById('d-original').textContent = 'Price Excl. GST';
+                document.getElementById('d-final').textContent = 'Original Inclusive Price';
+            }
+            document.getElementById('gst-tax-amount').textContent = '₹' + formatINR(tax.toFixed(2));
+            document.getElementById('gst-original').textContent = '₹' + formatINR(original.toFixed(2));
+            document.getElementById('gst-final').textContent = '₹' + formatINR(final_.toFixed(2));
+            document.getElementById('gst-cgst').textContent = '₹' + formatINR((tax / 2).toFixed(2));
+            document.getElementById('gst-sgst').textContent = '₹' + formatINR((tax / 2).toFixed(2));
+            document.getElementById('gst-igst').textContent = '₹' + formatINR(tax.toFixed(2));
+        }
+        function copyGSTResult() {
+            const rate = document.getElementById('gst-rate').value;
+            const orig = document.getElementById('gst-original').textContent;
+            const taxAmt = document.getElementById('gst-tax-amount').textContent;
+            const total = document.getElementById('gst-final').textContent;
+            copyText(`GST (${rate}%) Calculation\nOriginal: ${orig}\nGST Amount: ${taxAmt}\nTotal: ${total}`);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percentage Calculator — Find Percentages Online Free | ToolsIndia</title>
+    <meta name="description"
+        content="Free percentage calculator. Calculate X% of Y, what percentage is X of Y, and percentage increase/decrease. Multiple modes." />
+    <link rel="canonical" href="https://toolsindia.in/tools/percentage-calculator.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Percentage Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free percentage calculator with multiple modes.","url":"https://toolsindia.in/tools/percentage-calculator.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Percentage Calculator</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-finance">% Finance Tool</span>
+                <h1>Percentage Calculator — Multiple Modes</h1>
+                <p>Calculate percentages in 4 different ways. Find X% of Y, what % is X of Y, percentage change, and
+                    marks percentage.</p>
+            </div>
+            <div class="tool-box">
+                <!-- Mode 1 -->
+                <div style="border-bottom:1px solid var(--card-border); padding-bottom:1.5rem; margin-bottom:1.5rem;">
+                    <h3 style="font-size:1rem; font-weight:700; margin-bottom:1rem; color:var(--primary);">Mode 1: What
+                        is X% of Y?</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Percentage (%)</label><input type="number" id="m1-pct"
+                                placeholder="e.g. 15" oninput="calcMode1()" /></div>
+                        <div class="form-group"><label>Of Number</label><input type="number" id="m1-num"
+                                placeholder="e.g. 500" oninput="calcMode1()" /></div>
+                    </div>
+                    <div id="m1-result" class="hidden">
+                        <div class="calc-result">
+                            <div class="label">Result</div>
+                            <div class="main-val" id="m1-val">0</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mode 2 -->
+                <div style="border-bottom:1px solid var(--card-border); padding-bottom:1.5rem; margin-bottom:1.5rem;">
+                    <h3 style="font-size:1rem; font-weight:700; margin-bottom:1rem; color:var(--secondary);">Mode 2: X
+                        is what % of Y?</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Value (X)</label><input type="number" id="m2-x"
+                                placeholder="e.g. 25" oninput="calcMode2()" /></div>
+                        <div class="form-group"><label>Total (Y)</label><input type="number" id="m2-y"
+                                placeholder="e.g. 200" oninput="calcMode2()" /></div>
+                    </div>
+                    <div id="m2-result" class="hidden">
+                        <div class="calc-result">
+                            <div class="label">Percentage</div>
+                            <div class="main-val" id="m2-val">0%</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mode 3 -->
+                <div style="border-bottom:1px solid var(--card-border); padding-bottom:1.5rem; margin-bottom:1.5rem;">
+                    <h3 style="font-size:1rem; font-weight:700; margin-bottom:1rem; color:var(--accent);">Mode 3:
+                        Percentage Increase / Decrease</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Original Value</label><input type="number" id="m3-orig"
+                                placeholder="e.g. 100" oninput="calcMode3()" /></div>
+                        <div class="form-group"><label>New Value</label><input type="number" id="m3-new"
+                                placeholder="e.g. 125" oninput="calcMode3()" /></div>
+                    </div>
+                    <div id="m3-result" class="hidden">
+                        <div class="calc-result">
+                            <div class="label" id="m3-label">Change</div>
+                            <div class="main-val" id="m3-val">0%</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mode 4 — Marks -->
+                <div>
+                    <h3 style="font-size:1rem; font-weight:700; margin-bottom:1rem; color:var(--success);">Mode 4: Marks
+                        Percentage (India Exams)</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Marks Obtained</label><input type="number" id="m4-obtained"
+                                placeholder="e.g. 480" oninput="calcMode4()" /></div>
+                        <div class="form-group"><label>Total Marks</label><input type="number" id="m4-total"
+                                placeholder="e.g. 600" oninput="calcMode4()" /></div>
+                    </div>
+                    <div id="m4-result" class="hidden">
+                        <div class="calc-result">
+                            <div class="label">Percentage Score</div>
+                            <div class="main-val" id="m4-val">0%</div>
+                            <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-muted);" id="m4-grade">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>About Percentage Calculator</h2>
+                <p>This multi-mode percentage calculator handles all common percentage calculations. Use it for
+                    discounts, marks, GST calculations, salary hikes, and more.</p>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="emi-calculator.html"><span>🏦</span> EMI Calculator</a><a
+                        href="gst-calculator.html"><span>🧾</span> GST Calculator</a><a
+                        href="sip-calculator.html"><span>📈</span> SIP Calculator</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function calcMode1() { const p = parseFloat(document.getElementById('m1-pct').value), y = parseFloat(document.getElementById('m1-num').value); if (isNaN(p) || isNaN(y)) return; const r = document.getElementById('m1-result'); r.classList.remove('hidden'); document.getElementById('m1-val').textContent = formatINR((p * y / 100).toFixed(4) * 1); }
+        function calcMode2() { const x = parseFloat(document.getElementById('m2-x').value), y = parseFloat(document.getElementById('m2-y').value); if (isNaN(x) || isNaN(y) || !y) return; const r = document.getElementById('m2-result'); r.classList.remove('hidden'); document.getElementById('m2-val').textContent = (x / y * 100).toFixed(4) + '%'; }
+        function calcMode3() { const o = parseFloat(document.getElementById('m3-orig').value), n = parseFloat(document.getElementById('m3-new').value); if (isNaN(o) || isNaN(n) || !o) return; const r = document.getElementById('m3-result'); r.classList.remove('hidden'); const chg = ((n - o) / Math.abs(o) * 100); document.getElementById('m3-label').textContent = chg >= 0 ? 'Percentage Increase' : 'Percentage Decrease'; document.getElementById('m3-val').textContent = (chg >= 0 ? '+' : '') + chg.toFixed(2) + '%'; }
+        function calcMode4() { const obt = parseFloat(document.getElementById('m4-obtained').value), tot = parseFloat(document.getElementById('m4-total').value); if (isNaN(obt) || isNaN(tot) || !tot) return; const pct = obt / tot * 100; document.getElementById('m4-result').classList.remove('hidden'); document.getElementById('m4-val').textContent = pct.toFixed(2) + '%'; const grades = [{ min: 90, g: 'A+ (Distinction)' }, { min: 75, g: 'A (First Class)' }, { min: 60, g: 'B+ (Second Class)' }, { min: 45, g: 'B (Pass)' }, { min: 0, g: 'F (Fail)' }]; const grade = grades.find(g => pct >= g.min); document.getElementById('m4-grade').textContent = 'Grade: ' + grade.g; }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyword Density Checker — Free SEO Tool | ToolsIndia</title>
+    <meta name="description"
+        content="Free keyword density checker. Analyze keyword frequency and percentage in your content for better SEO. Paste text and get instant results." />
+    <link rel="canonical" href="https://toolsindia.in/tools/keyword-density.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Keyword Density Checker","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"url":"https://toolsindia.in/tools/keyword-density.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Keyword Density</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-seo">🔍 SEO Tool</span>
+                <h1>Keyword Density Checker</h1>
+                <p>Analyze keyword frequency and density in your content. Identify over-optimized or under-represented
+                    keywords for better SEO.</p>
+            </div>
+            <div class="tool-box">
+                <div class="form-group"><label for="kd-text">Paste Your Content</label><textarea id="kd-text" rows="8"
+                        placeholder="Paste your article, blog post, or page content here..."></textarea></div>
+                <div class="form-row">
+                    <div class="form-group"><label for="kd-min-len">Min Word Length</label><input type="number"
+                            id="kd-min-len" value="4" min="1" max="15" /></div>
+                    <div class="form-group"><label for="kd-top">Show Top N Words</label><input type="number" id="kd-top"
+                            value="20" min="5" max="100" /></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;">
+                    <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;margin:0;"><input
+                            type="checkbox" id="kd-exclude-stop" checked style="width:auto;margin:0;" /> Exclude stop
+                        words (the, and, is...)</label>
+                </div>
+                <button class="btn-action" onclick="analyzeKD()" style="width:100%;">🔑 Analyze Keywords</button>
+                <div id="kd-result" class="hidden" style="margin-top:1.5rem;">
+                    <div class="stat-grid" style="margin-bottom:1rem;">
+                        <div class="stat-item">
+                            <div class="val" id="kd-total-w">0</div>
+                            <div class="key">Total Words</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="val" id="kd-unique">0</div>
+                            <div class="key">Unique Words</div>
+                        </div>
+                    </div>
+                    <table id="kd-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Keyword</th>
+                                <th>Count</th>
+                                <th>Density</th>
+                                <th>Bar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="kd-body"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>What is Keyword Density?</h2>
+                <p>Keyword density is the percentage of times a keyword appears in your content relative to the total
+                    word count. Formula: <strong>(Number of keyword occurrences / Total words) × 100</strong></p>
+                <p>Ideal keyword density for a primary keyword is <strong>1-2%</strong>. Going beyond 3-4% risks being
+                    flagged as keyword stuffing by Google, which can hurt your rankings.</p>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="meta-tag-generator.html"><span>🏷️</span> Meta Tag Generator</a><a
+                        href="og-tag-generator.html"><span>📲</span> OG Tag Generator</a><a
+                        href="word-counter.html"><span>📊</span> Word Counter</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        const STOP_WORDS = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'is', 'are', 'was', 'were', 'be', 'been', 'has', 'have', 'had', 'this', 'that', 'these', 'those', 'it', 'its', 'we', 'you', 'he', 'she', 'they', 'i', 'my', 'our', 'your', 'their', 'his', 'her', 'will', 'do', 'did', 'not', 'if', 'as', 'so', 'from', 'by', 'can', 'all', 'into', 'there', 'what', 'which', 'who', 'more', 'also', 'no', 'up', 'out', 'about', 'than', 'then', 'when', 'over', 'just', 'only', 'some', 'such', 'any', 'after', 'before', 'now', 'how', 'each', 'being', 'here', 'our', 'were', 'them', 'would', 'could', 'she']);
+        function analyzeKD() {
+            const text = document.getElementById('kd-text').value.trim();
+            if (!text) { showToast('Please enter some content', 'error'); return; }
+            const minLen = parseInt(document.getElementById('kd-min-len').value) || 3;
+            const topN = parseInt(document.getElementById('kd-top').value) || 20;
+            const exStop = document.getElementById('kd-exclude-stop').checked;
+            const words = text.toLowerCase().match(/\b[a-z]+\b/g) || [];
+            const totalWords = words.length;
+            const freq = {};
+            for (const w of words) { if (w.length >= minLen && (!exStop || !STOP_WORDS.has(w))) { freq[w] = (freq[w] || 0) + 1; } }
+            const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, topN);
+            document.getElementById('kd-total-w').textContent = totalWords;
+            document.getElementById('kd-unique').textContent = Object.keys(freq).length;
+            const tbody = document.getElementById('kd-body'); tbody.innerHTML = '';
+            const maxCount = sorted[0]?.[1] || 1;
+            sorted.forEach(([w, c], i) => { const dens = (c / totalWords * 100).toFixed(2); const barW = Math.round(c / maxCount * 100); const color = parseFloat(dens) > 3 ? '#EF4444' : parseFloat(dens) > 2 ? '#F59E0B' : '#6C63FF'; const tr = document.createElement('tr'); tr.innerHTML = `<td>${i + 1}</td><td><strong>${w}</strong></td><td>${c}</td><td style="color:${color}">${dens}%</td><td><div class="progress" style="width:80px;display:inline-block;"><div class="progress-bar" style="width:${barW}%;background:${color}"></div></div></td>`; tbody.appendChild(tr); });
+            document.getElementById('kd-result').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character Counter — Count Characters with and without Spaces | ToolsIndia</title>
+    <meta name="description"
+        content="Free character counter tool. Count characters with and without spaces, letters, numbers, punctuation in any text instantly." />
+    <link rel="canonical" href="https://toolsindia.in/tools/character-counter.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Character Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"url":"https://toolsindia.in/tools/character-counter.html"}</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner"><a href="/" class="logo">Tools<span>India</span></a><button class="nav-toggle"
+                id="nav-toggle">☰</button>
+            <nav id="main-nav"><a href="/">Home</a><a href="../tools/" class="active">Tools</a><a
+                    href="../blog/">Blog</a><a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a
+                    href="../contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Character Counter</span></div>
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header"><span class="cat-badge cat-text">📝 Text Tool</span>
+                <h1>Character Counter</h1>
+                <p>Count characters, letters, numbers, spaces and punctuation in any text. Useful for social media
+                    posts, SMS, and character-limited forms.</p>
+            </div>
+            <div class="tool-box">
+                <div class="form-group"><label for="cc-input">Enter Your Text</label><textarea id="cc-input" rows="8"
+                        placeholder="Type or paste text here..." oninput="countChars()"></textarea></div>
+                <!-- Live limit indicator -->
+                <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap; margin-bottom:1rem;">
+                    <label style="margin:0; font-size:0.85rem; color:var(--text-muted);">Check limit:</label>
+                    <button class="btn-sm" onclick="setLimit(140)">Twitter/X (140)</button>
+                    <button class="btn-sm" onclick="setLimit(160)">SMS (160)</button>
+                    <button class="btn-sm" onclick="setLimit(2200)">Instagram (2200)</button>
+                    <button class="btn-sm" onclick="setLimit(0)">No Limit</button>
+                </div>
+                <div id="limit-bar-wrap" class="hidden" style="margin-bottom:1rem;">
+                    <div
+                        style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-muted);margin-bottom:0.3rem;">
+                        <span id="limit-used">0</span><span id="limit-max">/ 140</span></div>
+                    <div class="progress">
+                        <div class="progress-bar" id="limit-bar" style="width:0%;"></div>
+                    </div>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="val" id="cc-total">0</div>
+                        <div class="key">Total Chars</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="cc-nospace">0</div>
+                        <div class="key">Chars (no spaces)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="cc-letters">0</div>
+                        <div class="key">Letters</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="cc-numbers">0</div>
+                        <div class="key">Numbers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="cc-spaces">0</div>
+                        <div class="key">Spaces</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="cc-punct">0</div>
+                        <div class="key">Punctuation</div>
+                    </div>
+                </div>
+                <div class="btn-group" style="margin-top:1rem;"><button class="btn-clear"
+                        onclick="document.getElementById('cc-input').value='';countChars();">🗑 Clear</button></div>
+            </div>
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="seo-content">
+                <h2>About Character Counter</h2>
+                <p>Use this tool to check character counts for Twitter/X (280), LinkedIn posts, SMS (160 chars),
+                    Instagram captions (2200 chars), and anywhere character limits matter.</p>
+            </div>
+        </main>
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list"><a href="word-counter.html"><span>📊</span> Word Counter</a><a
+                        href="case-converter.html"><span>🔤</span> Case Converter</a><a
+                        href="text-reverser.html"><span>🔄</span> Text Reverser</a></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        let charLimit = 0;
+        function setLimit(n) { charLimit = n; document.querySelectorAll('.btn-sm').forEach(b => b.classList.remove('active')); event.target.classList.add('active'); if (!n) { document.getElementById('limit-bar-wrap').classList.add('hidden'); } else { document.getElementById('limit-max').textContent = '/ ' + n; document.getElementById('limit-bar-wrap').classList.remove('hidden'); } countChars(); }
+        function countChars() { const t = document.getElementById('cc-input').value; const total = t.length; const noSpace = t.replace(/\s/g, '').length; const letters = (t.match(/[a-zA-Z\u0900-\u097F\u0B80-\u0BFF]/g) || []).length; const numbers = (t.match(/\d/g) || []).length; const spaces = (t.match(/\s/g) || []).length; const punct = (t.match(/[^\w\s\u0900-\u097F\u0B80-\u0BFF]/g) || []).length; document.getElementById('cc-total').textContent = total; document.getElementById('cc-nospace').textContent = noSpace; document.getElementById('cc-letters').textContent = letters; document.getElementById('cc-numbers').textContent = numbers; document.getElementById('cc-spaces').textContent = spaces; document.getElementById('cc-punct').textContent = punct; if (charLimit) { document.getElementById('limit-used').textContent = total; const pct = Math.min(100, Math.round(total / charLimit * 100)); const bar = document.getElementById('limit-bar'); bar.style.width = pct + '%'; bar.style.background = pct > 100 ? '#EF4444' : pct > 80 ? '#F59E0B' : 'linear-gradient(90deg,#6C63FF,#06B6D4)'; } }
+    </script>
+</body>
+
+</html>

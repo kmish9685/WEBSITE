@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or draft directories (none currently)
+Disallow: /draft/
+Disallow: /admin/
+
+Sitemap: https://toolsindia.in/sitemap.xml

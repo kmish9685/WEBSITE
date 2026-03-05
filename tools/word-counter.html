@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Counter Online — Free Word Count Tool | ToolsIndia</title>
+    <meta name="description"
+        content="Free online word counter. Count words, characters, sentences, paragraphs and reading time instantly. No signup required." />
+    <meta name="keywords"
+        content="word counter, online word count, character counter, word count tool, free word counter" />
+    <link rel="canonical" href="https://toolsindia.in/tools/word-counter.html" />
+    <link rel="alternate" hreflang="hi" href="https://toolsindia.in/hi/tools/word-counter.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free online word counter tool. Count words, characters, sentences and reading time.","url":"https://toolsindia.in/tools/word-counter.html"}
+  </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo">Tools<span>India</span></a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <nav id="main-nav">
+                <a href="/">Home</a><a href="../tools/" class="active">Tools</a><a href="../blog/">Blog</a>
+                <a href="../hi/">हिन्दी</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="ad-slot ad-slot-header"><ins class="adsbygoogle" style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="../tools/">Tools</a><span
+            class="sep">›</span><span class="cur">Word Counter</span></div>
+
+    <div class="tool-page-wrap">
+        <main class="tool-main">
+            <div class="tool-header">
+                <span class="cat-badge cat-text">📝 Text Tool</span>
+                <h1>Word Counter — Free Online Tool</h1>
+                <p>Count words, characters, sentences, paragraphs, and estimate reading time instantly. Works in any
+                    language.</p>
+            </div>
+
+            <div class="tool-box">
+                <div class="form-group">
+                    <label for="text-input">Paste or Type Your Text</label>
+                    <textarea id="text-input" rows="10" placeholder="Start typing or paste your text here..."
+                        oninput="analyzeText()"></textarea>
+                </div>
+                <div class="btn-group">
+                    <button class="btn-copy" onclick="copyText(document.getElementById('text-input').value)">📋 Copy
+                        Text</button>
+                    <button class="btn-clear" onclick="clearText()">🗑 Clear</button>
+                </div>
+                <div class="stat-grid" style="margin-top:1.25rem;">
+                    <div class="stat-item">
+                        <div class="val" id="word-count">0</div>
+                        <div class="key">Words</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="char-count">0</div>
+                        <div class="key">Characters</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="char-no-space">0</div>
+                        <div class="key">Chars (no spaces)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="sentence-count">0</div>
+                        <div class="key">Sentences</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="para-count">0</div>
+                        <div class="key">Paragraphs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="val" id="read-time">0 min</div>
+                        <div class="key">Read Time</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Below-tool AdSense -->
+            <div class="ad-slot ad-slot-tool"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Premium teaser -->
+            <div class="premium-teaser">
+                <div class="lock">🔒</div>
+                <div>
+                    <h4>Premium Features</h4>
+                    <p>Keyword density analysis, Flesch reading score, export to PDF — coming soon!</p>
+                </div>
+                <span class="badge-soon">Coming Soon</span>
+            </div>
+
+            <div class="seo-content">
+                <h2>About Our Word Counter Tool</h2>
+                <p>Our free word counter tool is the fastest way to count words, characters, and sentences in any text.
+                    Whether you're writing an essay, blog post, tweet, or academic paper, this tool gives you instant,
+                    accurate results.</p>
+                <h3>How to Use the Word Counter</h3>
+                <ul>
+                    <li>Type or paste your text in the box above</li>
+                    <li>Results update automatically as you type</li>
+                    <li>Use "Copy" to copy text; "Clear" to reset</li>
+                </ul>
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-item">
+                    <div class="faq-q">Is this word counter free? <span class="faq-icon">+</span></div>
+                    <div class="faq-a">Yes! ToolsIndia's word counter is 100% free with no signup required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Does it work with Hindi and other Indian languages? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">Yes, the tool works with any language including Hindi, Tamil, Telugu, Bengali and
+                        Marathi.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Is my text stored anywhere? <span class="faq-icon">+</span></div>
+                    <div class="faq-a">No. All processing happens in your browser. Your text is never sent to our
+                        servers.</div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="tool-sidebar">
+            <div class="ad-slot ad-slot-sidebar"><ins class="adsbygoogle" style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Related Tools</h3>
+                <div class="tools-list">
+                    <a href="character-counter.html"><span>🔡</span> Character Counter</a>
+                    <a href="case-converter.html"><span>🔤</span> Case Converter</a>
+                    <a href="remove-duplicate-lines.html"><span>🗑️</span> Remove Duplicates</a>
+                    <a href="text-reverser.html"><span>🔄</span> Text Reverser</a>
+                    <a href="keyword-density.html"><span>🔑</span> Keyword Density</a>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>📩 Newsletter</h3>
+                <p>Get new tools delivered weekly</p>
+                <form onsubmit="return nlSubmit(event)">
+                    <input type="email" placeholder="your@email.com" style="margin-bottom:0.5rem;" required />
+                    <button class="btn-action" style="width:100%; padding:0.6rem;">Subscribe</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2025 ToolsIndia. All rights reserved.</p>
+                <div class="footer-langs"><a href="/">Home</a><a href="../tools/">All Tools</a><a
+                        href="../privacy-policy.html">Privacy</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function analyzeText() {
+            const text = document.getElementById('text-input').value;
+            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            const chars = text.length;
+            const charsNoSpace = text.replace(/\s/g, '').length;
+            const sentences = text.trim() === '' ? 0 : (text.match(/[.!?]+/g) || []).length;
+            const paras = text.trim() === '' ? 0 : text.trim().split(/\n\s*\n/).filter(p => p.trim()).length || (text.trim() ? 1 : 0);
+            const readTime = Math.max(1, Math.ceil(words / 200));
+            document.getElementById('word-count').textContent = words.toLocaleString('en-IN');
+            document.getElementById('char-count').textContent = chars.toLocaleString('en-IN');
+            document.getElementById('char-no-space').textContent = charsNoSpace.toLocaleString('en-IN');
+            document.getElementById('sentence-count').textContent = sentences.toLocaleString('en-IN');
+            document.getElementById('para-count').textContent = paras.toLocaleString('en-IN');
+            document.getElementById('read-time').textContent = readTime + ' min';
+        }
+        function clearText() {
+            document.getElementById('text-input').value = '';
+            analyzeText();
+        }
+        function nlSubmit(e) { e.preventDefault(); showToast('✓ Subscribed!'); e.target.reset(); return false; }
+    </script>
+</body>
+
+</html>
