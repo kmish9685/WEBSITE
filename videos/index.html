@@ -207,8 +207,15 @@
             align-items: center;
             justify-content: center;
             margin: 0.75rem 0;
-            overflow: hidden;
-            max-height: 260px;
+            overflow: hidden !important;
+            max-height: 260px !important;
+            height: auto;
+        }
+
+        .ad-banner ins,
+        .ad-banner iframe,
+        .ad-banner div {
+            max-height: 260px !important;
         }
 
         /* ===== INLINE GRID AD ===== */
