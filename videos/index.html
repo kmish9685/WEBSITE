@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="juicyads-site-verification" content="b97dc8cdd04fee2caf9b8633f2c25ea1">
     <title>Video Aggregator | Viral Content</title>
     <style>
         :root {
@@ -184,48 +185,196 @@
             margin: 0 auto;
             line-height: 1.5;
         }
+
+        /* Age Gate */
+        .age-gate-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: none;
+            /* Controlled by JS */
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .age-gate-modal {
+            background: #111;
+            border: 1px solid #333;
+            max-width: 550px;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .age-gate-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .age-badge {
+            background: #d32f2f;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 900;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .age-gate-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin: 0;
+            color: #fff;
+        }
+
+        .age-gate-text {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .age-gate-text p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .age-gate-btn {
+            background: #008c44;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-transform: uppercase;
+        }
+
+        .age-gate-btn:hover {
+            background: #007036;
+        }
+
+        .age-gate-footer {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .age-gate-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Blur class applied to body wrapper */
+        body.content-blurred .main-wrapper {
+            filter: blur(12px);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        body.content-blurred {
+            overflow: hidden;
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <a href="#" class="logo">ViralTube</a>
-        <div>
-            <!-- Placeholder for ad network script / header ad -->
-            <span style="color:#666; font-size:0.8rem;">[Header Ad Slot]</span>
+    <!-- Age Gate Overlay -->
+    <div class="age-gate-overlay" id="age-gate">
+        <div class="age-gate-modal">
+            <div class="age-gate-header">
+                <div class="age-badge">18+</div>
+                <h2 class="age-gate-title">ViralTube is an ADULTS ONLY website!</h2>
+            </div>
+            <div class="age-gate-text">
+                <p>You are about to enter a website that contains explicit material (pornography). This website should
+                    only be accessed if you are at least 18 years old or of legal age to view such material in your
+                    local jurisdiction, whichever is greater. Furthermore, you represent and warrant that you will not
+                    allow any minor access to this site or services.</p>
+                <p>PARENTS, PLEASE BE ADVISED: If you are a parent, it is your responsibility to keep any age-restricted
+                    content from being displayed to your children or wards. Protect your children from adult content and
+                    block access to this site by using parental controls.</p>
+            </div>
+            <button class="age-gate-btn" onclick="acceptAgeGate()">I am 18+<br>ENTER</button>
+            <div class="age-gate-footer">
+                When accessing this site you agree to <a href="https://www.qorno.com/terms-of-service/"
+                    target="_blank">our terms of use</a>.
+            </div>
         </div>
-    </header>
-
-    <div class="container">
-
-        <div class="ad-banner" id="top-ad">
-            [ 728x90 Leaderboard Ad Placement Here ]
-        </div>
-
-        <div class="video-grid" id="video-grid">
-            <!-- Rendered by JS -->
-        </div>
-
     </div>
 
-    <!-- Load Database - Absolute Path for Vercel -->
-    <script src="/videos/data.js?v=3"></script>
+    <div class="main-wrapper">
 
-    <script>
-        // 2. Render Videos
-        const gridContainer = document.getElementById('video-grid');
 
-        function renderVideos(videosToRender) {
-            gridContainer.innerHTML = '';
-            videosToRender.forEach(vid => {
-                const card = document.createElement('div');
-                card.className = 'video-card';
+        <header>
+            <a href="#" class="logo">ViralTube</a>
+            <div>
+                <!-- Placeholder for ad network script / header ad -->
+                <span style="color:#666; font-size:0.8rem;">[Header Ad Slot]</span>
+            </div>
+        </header>
 
-                // THE REDIRECT LOGIC
-                card.onclick = () => handleVideoClick(vid.url);
+        <div class="container">
 
-                card.innerHTML = `
+            <div class="ad-banner" id="top-ad">
+                [ 728x90 Leaderboard Ad Placement Here ]
+            </div>
+
+            <div class="video-grid" id="video-grid">
+                <!-- Rendered by JS -->
+            </div>
+
+        </div>
+
+        <!-- Load Database - Absolute Path for Vercel -->
+        <script src="/videos/data.js?v=4"></script>
+
+        <script>
+            // Age Gate Initialization
+            document.addEventListener('DOMContentLoaded', () => {
+                if (!localStorage.getItem('ageVerified')) {
+                    document.body.classList.add('content-blurred');
+                    document.getElementById('age-gate').style.display = 'flex';
+                }
+            });
+
+            function acceptAgeGate() {
+                localStorage.setItem('ageVerified', 'true');
+                document.body.classList.remove('content-blurred');
+                document.getElementById('age-gate').style.display = 'none';
+            }
+
+            // 2. Render Videos
+            const gridContainer = document.getElementById('video-grid');
+
+            function renderVideos(videosToRender) {
+                gridContainer.innerHTML = '';
+                videosToRender.forEach(vid => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+
+                    // THE REDIRECT LOGIC
+                    card.onclick = () => handleVideoClick(vid.url);
+
+                    card.innerHTML = `
         <div class="thumbnail-wrap">
           <img src="${vid.thumbnail}" class="thumbnail" loading="lazy" alt="${vid.title}">
           <span class="duration">${vid.duration}</span>
@@ -235,49 +384,51 @@
           <div class="video-meta">${vid.views} views • Category: ${vid.category}</div>
         </div>
       `;
-                gridContainer.appendChild(card);
-            });
-        }
+                    gridContainer.appendChild(card);
+                });
+            }
 
-        // Initial render
-        renderVideos(videoDatabase);
+            // Initial render
+            renderVideos(videoDatabase);
 
-        // 4. THE MONEY MAKER: Click Logic & Popunder Ad Scripts
-        function handleVideoClick(destinationUrl) {
-            // Here is where the aggregator magic happens. 
-            // Usually, you trigger a popunder ad script right here before redirecting.
+            // 4. THE MONEY MAKER: Click Logic & Popunder Ad Scripts
+            function handleVideoClick(destinationUrl) {
+                // Here is where the aggregator magic happens. 
+                // Usually, you trigger a popunder ad script right here before redirecting.
 
-            // Simulated Popunder Ad Logic
-            console.log("Popunder Ad Triggered!");
+                // Simulated Popunder Ad Logic
+                console.log("Popunder Ad Triggered!");
 
-            // 1. Open the requested video in a NEW background tab for the user
-            window.open(destinationUrl, '_blank');
+                // 1. Open the requested video in a NEW background tab for the user
+                window.open(destinationUrl, '_blank');
 
-            // 2. Redirect the CURRENT window (which the user left behind) to the Ad Network link.
-            // When they close their specific video, they return to find a giant juicy ad!
-            // Usually this maps to a JuicyAds or TrafficJunky smartlink URL
-            window.location.href = "https://example.com/simulated-juicy-ad";
-        }
-    </script>
+                // 2. POOUNDER REDIRECT
+                // Replace the URL inside the quotes with your JuicyAds SmartLink URL
+                // Ensure you keep the quotes "" around the link!
+                window.location.href = "https://example.com/PLACE-YOUR-JUICYADS-SMARTLINK-HERE";
+            }
+        </script>
 
-    <footer>
-        <div class="footer-links">
-            <a href="https://www.qorno.com/terms-of-service/" target="_blank">Terms of Service</a>
-            <a href="https://www.qorno.com/privacy-statement/" target="_blank">Privacy Statement</a>
-            <a href="https://www.qorno.com/statement-of-responsibility/" target="_blank">Statement of Responsibility</a>
-            <a href="https://www.qorno.com/notice-and-action-policy/" target="_blank">Notice and Action Policy</a>
-            <a href="https://www.qorno.com/notice-and-action-policy/#DMCA" target="_blank">DMCA</a>
-            <a href="https://www.qorno.com/acceptable-content-policy/" target="_blank">Acceptable Content Policy</a>
-            <a href="https://www.qorno.com/dsa-notice/" target="_blank">DSA Notice</a>
-            <a href="https://www.qorno.com/2257/" target="_blank">2257</a>
-        </div>
-        <div class="rta-notice">
-            <strong>Parents:</strong> ViralTube uses the "Restricted To Adults" (RTA) website label to better enable
-            parental filtering. Protect your children from adult content and block access to this site by using parental
-            controls.
-        </div>
-    </footer>
-
+        <footer>
+            <div class="footer-links">
+                <a href="https://www.qorno.com/terms-of-service/" target="_blank">Terms of Service</a>
+                <a href="https://www.qorno.com/privacy-statement/" target="_blank">Privacy Statement</a>
+                <a href="https://www.qorno.com/statement-of-responsibility/" target="_blank">Statement of
+                    Responsibility</a>
+                <a href="https://www.qorno.com/notice-and-action-policy/" target="_blank">Notice and Action Policy</a>
+                <a href="https://www.qorno.com/notice-and-action-policy/#DMCA" target="_blank">DMCA</a>
+                <a href="https://www.qorno.com/acceptable-content-policy/" target="_blank">Acceptable Content Policy</a>
+                <a href="https://www.qorno.com/dsa-notice/" target="_blank">DSA Notice</a>
+                <a href="https://www.qorno.com/2257/" target="_blank">2257</a>
+            </div>
+            <div class="rta-notice">
+                <strong>Parents:</strong> ViralTube uses the "Restricted To Adults" (RTA) website label to better enable
+                parental filtering. Protect your children from adult content and block access to this site by using
+                parental
+                controls.
+            </div>
+        </footer>
+    </div> <!-- End Main Wrapper -->
 </body>
 
 </html>
