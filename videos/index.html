@@ -41,10 +41,50 @@
             text-transform: uppercase;
         }
 
-        .container {
-            max-width: 1400px;
+        .layout-wrapper {
+            display: grid;
+            grid-template-columns: 160px 1fr 160px;
+            gap: 1.5rem;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem 1rem;
+        }
+
+        .sidebar-ad {
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: sticky;
+            top: 20px;
+        }
+
+        .side-banner {
+            width: 160px;
+            height: 600px;
+            background: #222;
+            border: 1px dashed #444;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1024px) {
+            .layout-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-ad {
+                display: none;
+            }
+        }
+
+        .container {
+            width: 100%;
         }
 
         /* Categories */
@@ -335,16 +375,44 @@
             </div>
         </header>
 
-        <div class="container">
+        <div class="layout-wrapper">
+            <!-- Left Sidebar -->
+            <aside class="sidebar-ad">
+                <div class="side-banner">
+                    [ 160x600 Left Skyscraper ]<br><br>Ad Slot
+                </div>
+            </aside>
 
-            <div class="ad-banner" id="top-ad">
-                [ 728x90 Leaderboard Ad Placement Here ]
+            <!-- Main Content -->
+            <div class="container">
+
+                <div class="ad-banner" id="top-ad"
+                    style="background:transparent; border:none; height:auto; margin:0 auto 1.5rem;">
+                    <!-- JuicyAds v3.0 -->
+                    <script type="text/javascript" data-cfasync="false" async
+                        src="https://poweredby.jads.co/js/jads.js"></script>
+                    <ins id="1112351" data-width="728" data-height="90"></ins>
+                    <script type="text/javascript" data-cfasync="false"
+                        async>(adsbyjuicy = window.adsbyjuicy || []).push({ 'adzone': 1112351 });</script>
+                    <!--JuicyAds END-->
+                </div>
+
+                <div class="video-grid" id="video-grid">
+                    <!-- Rendered by JS -->
+                </div>
+
+                <div class="ad-banner" id="bottom-ad" style="margin-top: 3rem;">
+                    [ 728x90 Bottom Leaderboard ]
+                </div>
+
             </div>
 
-            <div class="video-grid" id="video-grid">
-                <!-- Rendered by JS -->
-            </div>
-
+            <!-- Right Sidebar -->
+            <aside class="sidebar-ad">
+                <div class="side-banner">
+                    [ 160x600 Right Skyscraper ]<br><br>Ad Slot
+                </div>
+            </aside>
         </div>
 
         <footer>
