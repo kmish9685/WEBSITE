@@ -1,5 +1,68 @@
 const videoDatabase = [
     {
+  "id": "v_1772721321142",
+  "title": "Brunette Latina bombshell Afrodita, with massive natural melons craves rough hook-up, intense doggy-style pounding, cum-licking",
+  "thumbnail": "https://ic-vt-nss.xhpingcdn.com/a/ODMzNWRiOTc1OGI5YTcwMGRmNmRjNTBjNGY3ODlmYmE/s(w:1280,h:720),webp/027/114/497/1280x720.17545531.jpg",
+  "url": "https://xhamster44.desi/videos/brunette-latina-bombshell-afrodita-with-massive-natural-melons-craves-rough-hook-up-intense-doggy-style-pounding-cum-licking-xhamE77?pw=",
+  "category": "videos",
+  "views": "56K",
+  "duration": "5:00"
+},
+{
+  "id": "v_1772721301447",
+  "title": "Dark Haired Girl With Perfect Body Spreads Her Legs Wide (AI Generated)",
+  "thumbnail": "https://static.ourdream.ai/stream-vids/brooklyn-mirage-Ycx5HoTbse_dreamland_thumb.jpg",
+  "url": "https://ourdream.ai/stream/brooklyn-mirage-Ycx5HoTbse_dr_16x9?dpo=6&clickid=aec9429990f44ec690bc3536d20dde48&tracker=456&affid=1478&source=fuq_vid",
+  "category": "stream",
+  "views": "120K",
+  "duration": "4:00"
+},
+{
+  "id": "v_1772721295252",
+  "title": "Scarlit Is Glad You Came",
+  "thumbnail": "https://ic-vt-nss.xhpingcdn.com/a/ODZlYzMwZTk1MmQ4YjMyNTk0Zjg4MGIwODkwM2JiMTk/s(w:1280,h:720),webp/023/517/490/v2/2560x1440.219.webp",
+  "url": "https://xhamster44.desi/videos/scarlit-is-glad-you-came-xhOpVFj?pw=",
+  "category": "videos",
+  "views": "264K",
+  "duration": "4:00"
+},
+{
+  "id": "v_1772721289848",
+  "title": "Propertysex Good Looking Curvy Real Estate Agent Kenzie Madison Bangs Homebuyer",
+  "thumbnail": "https://ic-vt-nss.xhpingcdn.com/a/OTdiMGI5ZTNjOGMwZWE2OWFjYmRlNWMwZWU5OTkyNWE/s(w:1280,h:720),webp/027/561/352/v2/2560x1440.228.webp",
+  "url": "https://xhamster44.desi/videos/propertysex-good-looking-curvy-real-estate-agent-kenzie-madison-bangs-homebuyer-xhmG6zd?pw=",
+  "category": "videos",
+  "views": "133K",
+  "duration": "7:00"
+},
+{
+  "id": "v_1772721284866",
+  "title": "Homemade Sex of a Random Couple",
+  "thumbnail": "https://ic-vt-nss.xhpingcdn.com/a/YTc2YjRkNTVjNTcxMzdhNDFhZjk2ZmRmZmQyMWU4YzE/s(w:1280,h:720),webp/027/647/251/1280x720.17603913.jpg",
+  "url": "https://xhamster44.desi/videos/homemade-sex-of-a-random-couple-xhRmGGu?pw=",
+  "category": "videos",
+  "views": "427K",
+  "duration": "6:00"
+},
+{
+  "id": "v_1772721276776",
+  "title": "Lost in Translation",
+  "thumbnail": "https://ic-vt-nss.xhpingcdn.com/a/YjE0NTNjMTUxZDg0MGUxMGQwODMyMjEwNmUyYWNmNWQ/s(w:1280,h:720),webp/026/959/703/v2/2560x1440.205.webp",
+  "url": "https://xhamster44.desi/videos/lost-in-translation-xhjZtAi?pw=",
+  "category": "videos",
+  "views": "448K",
+  "duration": "6:00"
+},
+{
+  "id": "v_1772721263932",
+  "title": "🛑 DON'T WATCH IF YOU ARE ALONE  My Perverted STEP-SIS only thinks about FUCKING all day",
+  "thumbnail": "https://ic-vt-nss.xhpingcdn.com/a/YTFhNTFiN2ViMzRiZDQ4ZGY5ODBjNGMxNmNkNzYzNTc/s(w:1280,h:720),webp/027/461/014/1280x720.17576481.jpg",
+  "url": "https://xhamster44.desi/videos/dont-watch-if-you-are-alone-my-perverted-step-sis-only-thinks-about-fucking-all-day-xhafpwV?pw=",
+  "category": "videos",
+  "views": "455K",
+  "duration": "9:00"
+},
+{
   "id": "v_1772720887038",
   "title": "My Boyfriends Dad Made Me Cum",
   "thumbnail": "https://ic-vt-nss.xhpingcdn.com/a/OWVhMzJmNWFhZWJjZjlmYWEzNDM3NjM3YWZkMWIzNmU/s(w:1280,h:720),webp/025/511/861/v2/2560x1440.215.webp",
@@ -362,6 +425,13 @@ const videoDatabase = [
 ];
 
 const categories = [
+    {"id":"videos","name":"Videos"},
+    {"id":"stream","name":"Stream"},
+    {"id":"videos","name":"Videos"},
+    {"id":"videos","name":"Videos"},
+    {"id":"videos","name":"Videos"},
+    {"id":"videos","name":"Videos"},
+    {"id":"videos","name":"Videos"},
     {"id":"videos","name":"Videos"},
     {"id":"videos","name":"Videos"},
     {"id":"videos","name":"Videos"},

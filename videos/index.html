@@ -130,13 +130,21 @@
             border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, opacity 0.4s ease, box-shadow 0.2s;
             position: relative;
             -webkit-tap-highlight-color: transparent;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        .video-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .video-card:hover {
             transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(229, 9, 20, 0.18);
         }
 
         .video-card:active {
@@ -199,6 +207,16 @@
             align-items: center;
             justify-content: center;
             margin: 0.75rem 0;
+            overflow: hidden;
+        }
+
+        /* ===== INLINE GRID AD ===== */
+        .grid-ad {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0;
             overflow: hidden;
         }
 
@@ -555,14 +573,13 @@
             <!-- Main Content -->
             <div class="container">
 
-                <div class="ad-banner" id="top-ad"
-                    style="background:transparent; border:none; height:auto; margin:0 auto 1.5rem;">
-                    <!-- JuicyAds v3.0 -->
+                <div class="ad-banner" id="top-ad" style="margin:0 auto 0.75rem; justify-content:center;">
+                    <!-- JuicyAds 300x250 Center Ad -->
                     <script type="text/javascript" data-cfasync="false" async
                         src="https://poweredby.jads.co/js/jads.js"></script>
-                    <ins id="1112351" data-width="728" data-height="90"></ins>
+                    <ins id="1112393" data-width="300" data-height="250"></ins>
                     <script type="text/javascript" data-cfasync="false"
-                        async>(adsbyjuicy = window.adsbyjuicy || []).push({ 'adzone': 1112351 });</script>
+                        async>(adsbyjuicy = window.adsbyjuicy || []).push({ adzone: 1112393 });</script>
                     <!--JuicyAds END-->
                 </div>
 
@@ -573,8 +590,14 @@
                 <p class="page-info" id="page-info"></p>
                 <div class="pagination" id="pagination"></div>
 
-                <div class="ad-banner" id="bottom-ad" style="margin-top: 3rem;">
-                    [ 728x90 Bottom Leaderboard ]
+                <div class="ad-banner" id="bottom-ad" style="margin-top:1rem;">
+                    <!-- JuicyAds 300x250 Bottom -->
+                    <script type="text/javascript" data-cfasync="false" async
+                        src="https://poweredby.jads.co/js/jads.js"></script>
+                    <ins id="1112393" data-width="300" data-height="250"></ins>
+                    <script type="text/javascript" data-cfasync="false"
+                        async>(adsbyjuicy = window.adsbyjuicy || []).push({ adzone: 1112393 });</script>
+                    <!--JuicyAds END-->
                 </div>
 
             </div>
@@ -678,6 +701,17 @@
         let currentPage = 1;
         let currentVideos = [];
 
+        function inlineAdHTML() {
+            const el = document.createElement('div');
+            el.className = 'grid-ad';
+            el.innerHTML = `
+                <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"><\/script>
+                <ins id="1112393" data-width="300" data-height="250"></ins>
+                <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({adzone:1112393});<\/script>
+            `;
+            return el;
+        }
+
         function renderPage(videos, page) {
             currentVideos = videos;
             currentPage = page;
@@ -687,9 +721,14 @@
             const end = start + VIDEOS_PER_PAGE;
             const pageVideos = videos.slice(start, end);
 
-            // Render video cards
+            // Render video cards with inline ads every 10 videos
             gridContainer.innerHTML = '';
-            pageVideos.forEach(vid => {
+            pageVideos.forEach((vid, index) => {
+                // Inject an ad after every 10th video card
+                if (index > 0 && index % 10 === 0) {
+                    gridContainer.appendChild(inlineAdHTML());
+                }
+
                 const aLink = document.createElement('a');
                 aLink.href = vid.url;
                 aLink.target = '_blank';
@@ -711,6 +750,18 @@
                 aLink.appendChild(card);
                 gridContainer.appendChild(aLink);
             });
+
+            // Fade-in animation via IntersectionObserver
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add('visible'), i * 40);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            gridContainer.querySelectorAll('.video-card').forEach(card => observer.observe(card));
 
             // Page info
             pageInfoEl.textContent = `Page ${page} of ${totalPages} — ${videos.length} videos`;
