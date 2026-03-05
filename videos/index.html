@@ -181,6 +181,7 @@
             line-height: 1.3;
             display: -webkit-box;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -436,6 +437,69 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            background: #2a2a30;
+            border: none;
+            color: #ccc;
+            width: 38px;
+            height: 38px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: manipulation;
+        }
+
+        .page-btn:hover {
+            background: #3a3a42;
+            color: #fff;
+        }
+
+        .page-btn.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .page-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .page-btn.prev-next {
+            width: auto;
+            padding: 0 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        .page-info {
+            color: #888;
+            font-size: 0.85rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .page-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 
@@ -505,6 +569,9 @@
                 <div class="video-grid" id="video-grid">
                     <!-- Rendered by JS -->
                 </div>
+
+                <p class="page-info" id="page-info"></p>
+                <div class="pagination" id="pagination"></div>
 
                 <div class="ad-banner" id="bottom-ad" style="margin-top: 3rem;">
                     [ 728x90 Bottom Leaderboard ]
@@ -602,12 +669,27 @@
             }
         }
 
-        // 2. Render Videos
+        // ===== VIDEO RENDERING & PAGINATION =====
         const gridContainer = document.getElementById('video-grid');
+        const paginationEl = document.getElementById('pagination');
+        const pageInfoEl = document.getElementById('page-info');
 
-        function renderVideos(videosToRender) {
+        const VIDEOS_PER_PAGE = 20;
+        let currentPage = 1;
+        let currentVideos = [];
+
+        function renderPage(videos, page) {
+            currentVideos = videos;
+            currentPage = page;
+
+            const totalPages = Math.ceil(videos.length / VIDEOS_PER_PAGE);
+            const start = (page - 1) * VIDEOS_PER_PAGE;
+            const end = start + VIDEOS_PER_PAGE;
+            const pageVideos = videos.slice(start, end);
+
+            // Render video cards
             gridContainer.innerHTML = '';
-            videosToRender.forEach(vid => {
+            pageVideos.forEach(vid => {
                 const aLink = document.createElement('a');
                 aLink.href = vid.url;
                 aLink.target = '_blank';
@@ -616,7 +698,6 @@
 
                 const card = document.createElement('div');
                 card.className = 'video-card';
-
                 card.innerHTML = `
                     <div class="thumbnail-wrap">
                     <img src="${vid.thumbnail}" class="thumbnail" loading="lazy" alt="${vid.title}">
@@ -624,16 +705,85 @@
                     </div>
                     <div class="video-info">
                     <h3 class="video-title">${vid.title}</h3>
-                    <div class="video-meta">${vid.views} views • Category: ${vid.category}</div>
+                    <div class="video-meta">${vid.views} views • ${vid.category}</div>
                     </div>
                 `;
                 aLink.appendChild(card);
                 gridContainer.appendChild(aLink);
             });
+
+            // Page info
+            pageInfoEl.textContent = `Page ${page} of ${totalPages} — ${videos.length} videos`;
+
+            // Build pagination controls
+            paginationEl.innerHTML = '';
+
+            // Prev button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'page-btn prev-next';
+            prevBtn.textContent = '← Prev';
+            prevBtn.disabled = page === 1;
+            prevBtn.onclick = () => goToPage(page - 1);
+            paginationEl.appendChild(prevBtn);
+
+            // Page number buttons (show max 5 around current)
+            const maxVisible = 5;
+            let startPage = Math.max(1, page - Math.floor(maxVisible / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+            if (endPage - startPage < maxVisible - 1) startPage = Math.max(1, endPage - maxVisible + 1);
+
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'page-btn';
+                firstBtn.textContent = '1';
+                firstBtn.onclick = () => goToPage(1);
+                paginationEl.appendChild(firstBtn);
+                if (startPage > 2) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.cssText = 'color:#666; padding: 0 0.25rem; align-self:center;';
+                    paginationEl.appendChild(dots);
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'page-btn' + (i === page ? ' active' : '');
+                btn.textContent = i;
+                btn.onclick = () => goToPage(i);
+                paginationEl.appendChild(btn);
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.cssText = 'color:#666; padding: 0 0.25rem; align-self:center;';
+                    paginationEl.appendChild(dots);
+                }
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'page-btn';
+                lastBtn.textContent = totalPages;
+                lastBtn.onclick = () => goToPage(totalPages);
+                paginationEl.appendChild(lastBtn);
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'page-btn prev-next';
+            nextBtn.textContent = 'Next →';
+            nextBtn.disabled = page === totalPages;
+            nextBtn.onclick = () => goToPage(page + 1);
+            paginationEl.appendChild(nextBtn);
+        }
+
+        function goToPage(page) {
+            renderPage(currentVideos, page);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Initial render
-        renderVideos(videoDatabase);
+        renderPage(videoDatabase, 1);
     </script>
 </body>
 
