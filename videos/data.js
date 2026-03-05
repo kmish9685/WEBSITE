@@ -52,3 +52,27 @@ const categories = [
     { "id": "gaming", "name": "Gaming" },
     { "id": "fitness", "name": "Fitness & Health" }
 ];
+
+// Auto-scraped videos
+const scrapedVideos = [
+  {
+    "id": "v_1772687817899",
+    "title": "The New Vimeo Player (You Know, For Videos)",
+    "thumbnail": "https://i.vimeocdn.com/video/452001751-8216e0571c251a09d7a8387550942d89f7f86f6398f8ed886e639b0dd50d3c90-d?f=webp&region=us",
+    "url": "https://vimeo.com/76979871",
+    "category": "technology",
+    "views": "287K",
+    "duration": "9:00"
+  },
+  {
+    "id": "v_1772687818613",
+    "title": "Big Buck Bunny",
+    "thumbnail": "https://i.vimeocdn.com/video/20963649-f02817456fc48e7c317ef4c07ba259cd4b40a3649bd8eb50a4418b59ec3f5af5-d?f=webp&region=us",
+    "url": "https://vimeo.com/1084537",
+    "category": "gaming",
+    "views": "40K",
+    "duration": "10:00"
+  }
+];
+// Add to existing array:
+// videoDatabase.push(...scrapedVideos);
