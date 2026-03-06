@@ -414,6 +414,8 @@
 
             .layout-wrapper {
                 padding: 0.5rem;
+                padding-bottom: 80px;
+                /* room for sticky bottom bar */
             }
 
             .video-grid {
@@ -457,6 +459,28 @@
             .age-gate-title {
                 font-size: 1rem;
             }
+
+            /* Sticky mobile bottom ad bar */
+            .mobile-sticky-bar {
+                display: flex !important;
+            }
+        }
+
+        /* Sticky bottom bar visible only on mobile */
+        .mobile-sticky-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9990;
+            background: #0f0f12;
+            border-top: 1px solid #333;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 0;
+            min-height: 58px;
         }
 
         /* Very small phones */
@@ -591,6 +615,13 @@
                     <ins id="1112417" data-width="258" data-height="46"></ins>
                     <script type="text/javascript" data-cfasync="false"
                         async>(adsbyjuicy = window.adsbyjuicy || []).push({ 'adzone': 1112417 });</script>
+                </div>
+
+                <!-- ExoClick 300x250 - visible above video grid (mobile & desktop) -->
+                <div class="ad-banner" style="justify-content:center; margin-bottom:0.75rem;">
+                    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+                    <ins class="eas6a97888e2" data-zoneid="5865518"></ins>
+                    <script>(AdProvider = window.AdProvider || []).push({ "serve": {} });</script>
                 </div>
 
                 <div class="video-grid" id="video-grid">
@@ -736,8 +767,8 @@
             // Render video cards with inline ads every 10 videos
             gridContainer.innerHTML = '';
             pageVideos.forEach((vid, index) => {
-                // Inject an ad after every 10th video card
-                if (index > 0 && index % 10 === 0) {
+                // Inject an ad after every 6th video card on mobile-first
+                if (index > 0 && index % 6 === 0) {
                     gridContainer.appendChild(inlineAdHTML());
                 }
 
@@ -868,6 +899,14 @@
     <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
     <ins class="eas6a97888e42" data-zoneid="5865520"></ins>
     <script>(AdProvider = window.AdProvider || []).push({ "serve": {} });</script>
+
+    <!-- JuicyAds Mobile Sticky Bottom Bar (300x100) - visible on mobile only -->
+    <div class="mobile-sticky-bar" id="mobile-sticky-ad">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1112416" data-width="300" data-height="100"></ins>
+        <script type="text/javascript" data-cfasync="false"
+            async>(adsbyjuicy = window.adsbyjuicy || []).push({ adzone: 1112416 });</script>
+    </div>
 
 </body>
 
