@@ -899,6 +899,23 @@
 
         // Initial render
         renderPage(videoDatabase, 1);
+
+        // Hide sticky bottom bar when footer becomes visible so it never covers policy links
+        (function () {
+            const stickyBar = document.getElementById('mobile-sticky-ad');
+            const footer = document.querySelector('footer');
+            if (!stickyBar || !footer) return;
+            function checkFooterVisibility() {
+                const footerTop = footer.getBoundingClientRect().top;
+                if (footerTop <= window.innerHeight + 20) {
+                    stickyBar.style.display = 'none';
+                } else {
+                    stickyBar.style.display = '';
+                }
+            }
+            window.addEventListener('scroll', checkFooterVisibility, { passive: true });
+            checkFooterVisibility();
+        })();
     </script>
 
     <!-- Start JuicyAds Float Ad -->
